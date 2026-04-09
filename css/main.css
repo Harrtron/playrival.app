@@ -427,7 +427,6 @@ a:hover {
   border-radius: 999px;
   margin-bottom: 1.35rem;
   box-shadow: var(--glow-green);
-  animation: pulse-border 3s ease-in-out infinite;
 }
 
 @keyframes pulse-border {
@@ -1861,7 +1860,6 @@ a:hover {
   }
 }
 
-.hero__badge,
 .hero__logo-stack,
 .hero h1,
 .hero__sub,
@@ -1871,11 +1869,18 @@ a:hover {
   animation-duration: 700ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   animation-fill-mode: forwards;
+  animation-iteration-count: 1;
 }
 
+/* Entrance once, then resume the live pulse on border/shadow only */
 .hero__badge {
-  animation-name: hero-enter-up;
-  animation-delay: 0ms;
+  opacity: 0;
+  animation-name: hero-enter-up, pulse-border;
+  animation-duration: 700ms, 3s;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1), ease-in-out;
+  animation-delay: 0ms, 750ms;
+  animation-iteration-count: 1, infinite;
+  animation-fill-mode: forwards, none;
 }
 
 .hero__logo-stack {
