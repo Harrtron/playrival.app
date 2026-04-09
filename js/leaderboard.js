@@ -36,22 +36,22 @@
   const scenarios = [
     {
       status: "Quickfire bonus",
-      event: "38' You hit the live call and the board starts to wobble.",
+      event: "38' You nail the live call and the board starts to wobble.",
       deltas: { you: 46, nico: 12, alex: 8, mara: -18, zane: 5 },
     },
     {
       status: "Pack reshuffle",
-      event: "44' A missed card prediction rattles the leaders and opens the lane.",
+      event: "44' A missed prediction rattles the leaders and opens the lane.",
       deltas: { you: 14, nico: -24, alex: 31, mara: 22, zane: -8 },
     },
     {
       status: "Chaos active",
-      event: "61' Chaos doubles the swing for a heartbeat and places start flipping.",
+      event: "61' Chaos doubles the swing and places start flipping.",
       deltas: { you: 52, nico: 9, alex: -21, mara: 26, zane: 18 },
     },
     {
       status: "Pressure rising",
-      event: "74' NorthStandNico slips. You are breathing on the top spot.",
+      event: "74' NorthStandNico slips. You're breathing on the top spot.",
       deltas: { you: 18, nico: -34, alex: 16, mara: 7, zane: 29 },
     },
     {
@@ -61,7 +61,7 @@
     },
     {
       status: "Final push",
-      event: "89' Last prediction locked. You land the finish kick.",
+      event: "89' Last call locked. You land the finish kick.",
       deltas: { you: 37, nico: 11, alex: 5, mara: -19, zane: -23 },
     },
   ];
@@ -161,12 +161,12 @@
 
     if (yourRank === 1) {
       const cushion = Math.max(leader.score - players[1].score, 0);
-      footerEl.textContent = `You are Match MVP right now. Hold the ${formatScore(cushion)}-pt gap.`;
+      footerEl.textContent = `You're Match MVP right now. Hold the ${formatScore(cushion)}-pt gap.`;
       return;
     }
 
     const gap = Math.max(leader.score - you.score, 0);
-    footerEl.textContent = `${formatScore(gap)} pts off Match MVP. One swing changes everything.`;
+    footerEl.textContent = `${formatScore(gap)} pts off the Title Charge. One swing changes everything.`;
   };
 
   let stepIndex = 0;
