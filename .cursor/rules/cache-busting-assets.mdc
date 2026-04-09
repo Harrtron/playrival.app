@@ -1,0 +1,22 @@
+---
+description: Cache-busting query strings for local CSS and JS in static HTML
+alwaysApply: true
+---
+
+# Asset cache versioning (static site)
+
+This repo is static HTML on GitHub Pages. Browsers cache aggressively; **every** reference to a **local** stylesheet or script must include a cache-busting query string.
+
+## Required pattern
+
+- Use `?v=<integer>` on `href` / `src` for project-owned files ending in `.css` or `.js` (e.g. `css/main.css?v=4`, `js/reveal.js?v=4`).
+- Do **not** add `?v=` to third-party URLs (e.g. `fonts.googleapis.com`, `sibforms.com`) unless the vendor documents it.
+
+## When to bump
+
+- Bump the integer **whenever** you change the contents of any local `.css` or `.js` file that is linked from HTML, **or** when you want to force clients to refetch after a deploy.
+- Prefer **one shared version number** across all local asset links in this repo (easier than per-file versions): increment it in **every** HTML file that references those assets so caches stay consistent.
+
+## Files to update
+
+Search for `css/main.css`, `js/`, and `?v=` in `*.html` at the repo root and under subfolders (e.g. `manifesto/`, `code-of-conduct/`). Root pages use `css/` and `js/`; nested pages use `../css/` and `../js/`.
