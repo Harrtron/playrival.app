@@ -2291,56 +2291,12 @@ a:hover {
   margin: 0;
 }
 
-.manifesto__sprite {
-  display: grid;
-  place-items: center;
-  gap: 0.9rem;
-  margin: 2.5rem 0 2.75rem;
-  text-align: center;
-}
-
-.manifesto__sprite-stage {
-  position: relative;
-  width: 100%;
-  max-width: 240px;
-  padding: 1.5rem 1rem 1.2rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 22px;
-  background:
-    radial-gradient(circle at 50% 20%, rgba(0, 255, 136, 0.12), transparent 42%),
-    radial-gradient(circle at 50% 100%, rgba(234, 20, 139, 0.08), transparent 46%),
-    linear-gradient(180deg, rgba(20, 24, 32, 0.96), rgba(10, 11, 15, 0.94));
-  overflow: hidden;
-}
-
-.manifesto__sprite-stage::before {
-  content: "";
-  position: absolute;
-  inset: auto 12% 0;
-  height: 28%;
-  border-radius: 999px;
-  background: radial-gradient(circle, rgba(234, 20, 139, 0.22), transparent 68%);
-  filter: blur(6px);
-}
-
-.manifesto__sprite-img {
-  position: relative;
-  z-index: 1;
-  width: clamp(5.25rem, 14vw, 7rem);
-  height: auto;
-  image-rendering: pixelated;
-  filter: drop-shadow(0 14px 20px rgba(0, 0, 0, 0.3));
-}
-
-.manifesto__sprite-copy {
-  margin: 0;
-  font-size: 0.78rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
 .manifesto__mission {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.25rem;
   margin: 2.5rem 0;
 }
 
@@ -2350,8 +2306,39 @@ a:hover {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--neon);
-  margin: 0 0 1rem;
-  line-height: 1;
+  margin: 0;
+  line-height: 1.05;
+  flex: 1 1 14rem;
+  min-width: min(100%, 12rem);
+}
+
+.manifesto__mission-pixel {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  min-height: clamp(3.2rem, 8vw, 4.5rem);
+}
+
+.manifesto__mission-pixel-img {
+  width: clamp(4.5rem, 12vw, 6.5rem);
+  height: auto;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.35));
+  animation: m-sprite-float 3.8s ease-in-out infinite;
+}
+
+@media (max-width: 520px) {
+  .manifesto__mission {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .manifesto__mission-pixel {
+    align-self: center;
+    min-height: 0;
+  }
 }
 
 .manifesto__sig {
@@ -2517,10 +2504,6 @@ a:hover {
 .manifesto__hl-line:nth-child(3) { animation-delay: 0.46s; }
 .manifesto__hl-line:nth-child(4) { animation-delay: 0.64s; }
 
-.manifesto__sprite-stage {
-  animation: m-sprite-float 3.8s ease-in-out infinite;
-}
-
 /* Callout — perpetual left-border glow */
 .manifesto__callout {
   animation: m-callout-glow 3.5s ease-in-out infinite;
@@ -2556,6 +2539,15 @@ a:hover {
   animation: m-slam 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+.manifesto--animated .manifesto__mission .manifesto__mission-pixel {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.manifesto--animated .manifesto__mission.is-visible .manifesto__mission-pixel {
+  animation: m-fade-up 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
+}
+
 /* Stats stagger (JS-gated) */
 .manifesto--animated .manifesto__stats .manifesto__stat {
   opacity: 0;
@@ -2580,7 +2572,7 @@ a:hover {
 @media (prefers-reduced-motion: reduce) {
   .manifesto__hl-line,
   .manifesto__orb,
-  .manifesto__sprite-stage,
+  .manifesto__mission-pixel-img,
   .manifesto__callout,
   .manifesto__stat-num.count-done {
     animation: none !important;
@@ -2599,6 +2591,12 @@ a:hover {
 
   .manifesto--animated .manifesto__mission h2 {
     opacity: 1 !important;
+    animation: none !important;
+  }
+
+  .manifesto--animated .manifesto__mission .manifesto__mission-pixel {
+    opacity: 1 !important;
+    transform: none !important;
     animation: none !important;
   }
 

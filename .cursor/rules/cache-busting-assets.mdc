@@ -9,7 +9,7 @@ This repo is static HTML on GitHub Pages. Browsers cache aggressively; **every**
 
 ## Required pattern
 
-- Use `?v=<integer>` on `href` / `src` for project-owned files ending in `.css` or `.js` (e.g. `css/main.css?v=4`, `js/reveal.js?v=4`).
+- Use `?v=<integer>` on `href` / `src` for project-owned files ending in `.css` or `.js` (e.g. `css/main.css?v=5`, `js/reveal.js?v=5`).
 - Do **not** add `?v=` to third-party URLs (e.g. `fonts.googleapis.com`, `sibforms.com`) unless the vendor documents it.
 
 ## When to bump
