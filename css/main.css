@@ -2091,3 +2091,520 @@ a:hover {
 .back-link:hover {
   color: var(--primary);
 }
+
+/* ── Story strip (homepage teaser) ─────────────────────── */
+.story-strip {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 720px;
+  margin: 0 auto 4rem;
+  padding: 1.25rem 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: border-color 0.18s, box-shadow 0.18s;
+}
+
+.story-strip:hover {
+  border-color: var(--primary);
+  box-shadow: var(--glow-pink);
+  text-decoration: none;
+}
+
+.story-strip__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  object-fit: cover;
+  border: 2px solid var(--border);
+}
+
+.story-strip__quote {
+  flex: 1;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0;
+  font-style: italic;
+}
+
+.story-strip__cta {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@media (max-width: 560px) {
+  .story-strip {
+    flex-wrap: wrap;
+    padding: 1.25rem 1.25rem;
+  }
+  .story-strip__cta {
+    width: 100%;
+    text-align: right;
+  }
+}
+
+/* ── Manifesto page ─────────────────────────────────────── */
+.manifesto {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 5.5rem 1.5rem 5rem;
+}
+
+.manifesto__eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.manifesto h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 8vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin: 0 0 2rem;
+}
+
+.manifesto h1 em {
+  font-style: normal;
+  color: var(--primary);
+}
+
+.manifesto p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--muted);
+  margin: 0 0 1.25rem;
+}
+
+.manifesto p strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.manifesto__divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 3rem 0;
+  position: relative;
+}
+
+.manifesto__divider::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 48px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+.manifesto__section-label {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--neon);
+  margin: 0 0 1.25rem;
+}
+
+.manifesto__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 0 0 2.5rem;
+}
+
+.manifesto__stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--primary);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.manifesto__stat:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.manifesto__stat:nth-child(2) { border-top-color: var(--neon); }
+.manifesto__stat:nth-child(3) { border-top-color: var(--orange); }
+.manifesto__stat:nth-child(4) { border-top-color: var(--gold); }
+
+.manifesto__stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 7vw, 4.25rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.manifesto__stat:nth-child(2) .manifesto__stat-num { color: var(--neon); }
+.manifesto__stat:nth-child(3) .manifesto__stat-num { color: var(--orange); }
+.manifesto__stat:nth-child(4) .manifesto__stat-num { color: var(--gold); }
+
+.manifesto__stat-text {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+@media (max-width: 480px) {
+  .manifesto__stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+.manifesto__callout {
+  border-left: 3px solid var(--neon);
+  padding: 0.1rem 0 0.1rem 1.5rem;
+  margin: 2rem 0;
+}
+
+.manifesto__callout p {
+  font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--text);
+  font-style: italic;
+  margin: 0;
+}
+
+.manifesto__sprite {
+  display: grid;
+  place-items: center;
+  gap: 0.9rem;
+  margin: 2.5rem 0 2.75rem;
+  text-align: center;
+}
+
+.manifesto__sprite-stage {
+  position: relative;
+  width: 100%;
+  max-width: 240px;
+  padding: 1.5rem 1rem 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(0, 255, 136, 0.12), transparent 42%),
+    radial-gradient(circle at 50% 100%, rgba(234, 20, 139, 0.08), transparent 46%),
+    linear-gradient(180deg, rgba(20, 24, 32, 0.96), rgba(10, 11, 15, 0.94));
+  overflow: hidden;
+}
+
+.manifesto__sprite-stage::before {
+  content: "";
+  position: absolute;
+  inset: auto 12% 0;
+  height: 28%;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(234, 20, 139, 0.22), transparent 68%);
+  filter: blur(6px);
+}
+
+.manifesto__sprite-img {
+  position: relative;
+  z-index: 1;
+  width: clamp(5.25rem, 14vw, 7rem);
+  height: auto;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 14px 20px rgba(0, 0, 0, 0.3));
+}
+
+.manifesto__sprite-copy {
+  margin: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.manifesto__mission {
+  margin: 2.5rem 0;
+}
+
+.manifesto__mission h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 5vw, 2.75rem);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--neon);
+  margin: 0 0 1rem;
+  line-height: 1;
+}
+
+.manifesto__sig {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.manifesto__sig-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.manifesto__sig-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 2px solid var(--border);
+  object-fit: cover;
+  filter: drop-shadow(0 0 12px rgba(234, 20, 139, 0.2));
+}
+
+.manifesto__sig-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.manifesto__sig-name {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin: 0 0 0.25rem;
+}
+
+.manifesto__sig-title {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+
+.manifesto__sig-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  transition: border-color 0.15s, color 0.15s;
+  text-decoration: none;
+}
+
+.manifesto__sig-link:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.manifesto__sig-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* ── Manifesto — animations ─────────────────────────────── */
+
+@keyframes m-line-in {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes m-fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes m-slam {
+  0%  { opacity: 0; transform: scale(1.08) translateY(-10px); letter-spacing: 0.12em; }
+  65% { transform: scale(0.98) translateY(0); letter-spacing: 0.04em; }
+  100%{ opacity: 1; transform: scale(1); letter-spacing: 0.05em; }
+}
+
+@keyframes m-divider-grow {
+  to { width: 48px; }
+}
+
+@keyframes m-callout-glow {
+  0%, 100% { box-shadow: -3px 0 8px rgba(0, 255, 136, 0.1); }
+  50%       { box-shadow: -3px 0 28px rgba(0, 255, 136, 0.5); }
+}
+
+@keyframes m-orb-drift {
+  from { transform: translate(30%, -30%) scale(1); }
+  to   { transform: translate(18%, -18%) scale(1.15); }
+}
+
+@keyframes m-orb-drift-green {
+  from { transform: translate(-35%, 35%) scale(1); }
+  to   { transform: translate(-22%, 22%) scale(1.12); }
+}
+
+@keyframes m-sprite-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes m-count-flash {
+  0%   { filter: brightness(1.8); text-shadow: 0 0 32px currentColor; }
+  100% { filter: brightness(1);   text-shadow: none; }
+}
+
+/* Ambient orbs */
+.manifesto__orb {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.manifesto__orb:not(.manifesto__orb--green) {
+  top: 0;
+  right: 0;
+  width: min(72vw, 720px);
+  height: min(72vw, 720px);
+  background: radial-gradient(circle, rgba(234, 20, 139, 0.09) 0%, transparent 68%);
+  transform: translate(30%, -30%);
+  animation: m-orb-drift 11s ease-in-out infinite alternate;
+}
+
+.manifesto__orb--green {
+  bottom: 0;
+  left: 0;
+  width: min(60vw, 620px);
+  height: min(60vw, 620px);
+  background: radial-gradient(circle, rgba(0, 255, 136, 0.06) 0%, transparent 70%);
+  transform: translate(-35%, 35%);
+  animation: m-orb-drift-green 13s ease-in-out infinite alternate;
+}
+
+/* Ensure content sits above orbs */
+.manifesto > *:not(.manifesto__orb) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Headline — line-by-line on page load */
+.manifesto__hl-line {
+  display: block;
+  animation: m-line-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.manifesto__hl-line:nth-child(1) { animation-delay: 0.05s; }
+.manifesto__hl-line:nth-child(2) { animation-delay: 0.25s; }
+.manifesto__hl-line:nth-child(3) { animation-delay: 0.46s; }
+.manifesto__hl-line:nth-child(4) { animation-delay: 0.64s; }
+
+.manifesto__sprite-stage {
+  animation: m-sprite-float 3.8s ease-in-out infinite;
+}
+
+/* Callout — perpetual left-border glow */
+.manifesto__callout {
+  animation: m-callout-glow 3.5s ease-in-out infinite;
+}
+
+/* Generic fade-ups (JS-gated) */
+.manifesto--animated [data-m-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.manifesto--animated [data-m-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Divider line grow (JS-gated) */
+.manifesto--animated .manifesto__divider::before {
+  width: 0;
+}
+
+.manifesto--animated .manifesto__divider.is-visible::before {
+  animation: m-divider-grow 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Mission slam (JS-gated) */
+.manifesto--animated .manifesto__mission h2 {
+  opacity: 0;
+}
+
+.manifesto--animated .manifesto__mission.is-visible h2 {
+  animation: m-slam 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Stats stagger (JS-gated) */
+.manifesto--animated .manifesto__stats .manifesto__stat {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.manifesto__stats--visible .manifesto__stat {
+  animation: m-fade-up 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.manifesto__stats--visible .manifesto__stat:nth-child(1) { animation-delay: 0.00s; }
+.manifesto__stats--visible .manifesto__stat:nth-child(2) { animation-delay: 0.10s; }
+.manifesto__stats--visible .manifesto__stat:nth-child(3) { animation-delay: 0.10s; }
+.manifesto__stats--visible .manifesto__stat:nth-child(4) { animation-delay: 0.20s; }
+
+/* Counter flash on completion */
+.manifesto__stat-num.count-done {
+  animation: m-count-flash 1s ease-out forwards;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .manifesto__hl-line,
+  .manifesto__orb,
+  .manifesto__sprite-stage,
+  .manifesto__callout,
+  .manifesto__stat-num.count-done {
+    animation: none !important;
+  }
+
+  .manifesto--animated [data-m-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .manifesto--animated .manifesto__divider::before {
+    width: 48px !important;
+    animation: none !important;
+  }
+
+  .manifesto--animated .manifesto__mission h2 {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+
+  .manifesto--animated .manifesto__stats .manifesto__stat {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
