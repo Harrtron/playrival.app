@@ -443,7 +443,7 @@ a:hover {
 
 .hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 7.5vw, 3.75rem);
+  font-size: clamp(2.5rem, 9vw, 5rem);
   font-weight: 400;
   line-height: 0.95;
   letter-spacing: 0.02em;
@@ -460,7 +460,7 @@ a:hover {
 .hero__sub {
   font-size: clamp(1rem, 2.5vw, 1.25rem);
   color: var(--muted);
-  max-width: 28rem;
+  max-width: 42rem;
   margin: 0 auto 2rem;
 }
 
@@ -1497,6 +1497,15 @@ a:hover {
   line-height: 1.6;
 }
 
+.progression__sub {
+  color: var(--fg);
+  font-size: 1rem;
+  font-weight: 600;
+  max-width: 34rem;
+  margin: 0 0 1.5rem;
+  line-height: 1.6;
+}
+
 .progression__list {
   list-style: none;
   margin: 0;
@@ -2333,6 +2342,14 @@ a:hover {
   .manifesto__mission {
     flex-direction: column;
     align-items: stretch;
+    justify-content: flex-start;
+  }
+
+  /* Row layout uses flex-basis 14rem for width; in column the main axis is
+     vertical, so the same rule wrongly forces a 14rem-tall heading box. */
+  .manifesto__mission h2 {
+    flex: 0 1 auto;
+    min-width: 0;
   }
 
   .manifesto__mission-pixel {
