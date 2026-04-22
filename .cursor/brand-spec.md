@@ -85,7 +85,7 @@ This distinction must be maintained across all copy. RIVAL sits in a unique posi
 
 ### Use
 - Rivals — not users or players
-- The founding squad — not early adopters
+- The RIVAL Elite — not early adopters
 - The lobby — not a game session
 - The match — not the game (that's RIVAL)
 - Chaos — owned, deliberate
@@ -113,7 +113,7 @@ This distinction must be maintained across all copy. RIVAL sits in a unique posi
 
 ### Website — Hero
 **Step out of the stands.** — then one line: "RIVAL is the live multiplayer game played inside every match. Create chaos. Rival everyone in your lobby."
-CTA: **Join the founding squad.**
+CTA: **Join The RIVAL Elite.**
 
 ### App Store — Title & Subtitle
 - Title: RIVAL — Live Sport Game
@@ -121,7 +121,7 @@ CTA: **Join the founding squad.**
 - First line of description: "The live multiplayer game you play inside every match."
 
 ### Onboarding
-Open with the identity shift: Step out of the stands. Walk through the loop in one sentence per step. Close with belonging: Welcome to the founding squad. Season 1 starts now.
+Open with the identity shift: Step out of the stands. Walk through the loop in one sentence per step. Close with belonging: Welcome to The RIVAL Elite. Season 1 starts now.
 
 ### In-App — Live moments
 Short. Present tense. Active.
@@ -148,9 +148,9 @@ RIVAL is not an app people use. It's something people are part of. The language 
 
 > The fans who got here first are building what RIVAL becomes.
 
-Use this frame in all early-adopter and founding squad communications. Season 1 players are pioneers, not beta testers.
+Use this frame in all early-adopter and The RIVAL Elite communications. Season 1 players are pioneers, not beta testers.
 
-Community identity terms: The RIVAL community. The founding squad. Season 1. The lobby. Your rivals. The league. These are not feature names. They are identity markers that create belonging and signal to newcomers that there is something worth joining.
+Community identity terms: The RIVAL community. The RIVAL Elite. Season 1. The lobby. Your rivals. The league. These are not feature names. They are identity markers that create belonging and signal to newcomers that there is something worth joining.
 
 ---
 
