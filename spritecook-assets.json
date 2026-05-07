@@ -118,5 +118,15 @@
     "label": "wax-seal",
     "asset_id": "f301f8b5-1fdb-4700-a091-4650d5cd01fc",
     "sha12": ""
+  },
+  {
+    "label": "lightning-lock",
+    "asset_id": "f2a6d522-55b0-4165-a78e-98b8947a0e19",
+    "sha12": ""
+  },
+  {
+    "label": "lightning-lock-anim",
+    "asset_id": "08be5589-04ed-4fef-b482-b8e2d672c7f6",
+    "sha12": ""
   }
 ]
