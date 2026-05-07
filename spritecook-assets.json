@@ -1,0 +1,57 @@
+[
+  {
+    "label": "crown",
+    "asset_id": "c3c6f029-b42c-4712-a8a5-b5c75b719b5c",
+    "sha12": "54cf29e59ebc"
+  },
+  {
+    "label": "key",
+    "asset_id": "ce8e2452-8d55-40f4-80dd-405d99b9f75b",
+    "sha12": "501975a0aea9"
+  },
+  {
+    "label": "forge",
+    "asset_id": "998e48f0-4479-4e4f-9302-74d34dbda71c",
+    "sha12": "4824bcf5d440"
+  },
+  {
+    "label": "rocket",
+    "asset_id": "444c2e46-a094-4f21-b7b3-01b3ad136e20",
+    "sha12": "311cbf22c4f9"
+  },
+  {
+    "label": "coins",
+    "asset_id": "02b3a424-c223-499f-b806-eeb990de9197",
+    "sha12": "226b361f8056"
+  },
+  {
+    "label": "badge",
+    "asset_id": "6c6b8538-b6ad-4156-8e3d-4d2b81ffe859",
+    "sha12": "5fb30d4f85ef"
+  },
+  {
+    "label": "hero-art",
+    "asset_id": "3bd71062-549b-4c08-b43f-b794498ac6cf",
+    "sha12": "6e4d8281dd18"
+  },
+  {
+    "label": "forge-anim",
+    "asset_id": "b72b7d0b-898b-498b-8e3e-837cd7b61e5b",
+    "sha12": "1fef97b06e1c"
+  },
+  {
+    "label": "rocket-anim",
+    "asset_id": "e11ad72e-12c6-424d-bda1-cd8d3d77e138",
+    "sha12": "12f7051b40cc"
+  },
+  {
+    "label": "coins-anim",
+    "asset_id": "7b3593e5-ffb2-41fd-af44-687f0bb211e3",
+    "sha12": "c4d2169a2a0b"
+  },
+  {
+    "label": "hero-art-anim",
+    "asset_id": "5bd1f7b8-3a26-467c-9478-ce5abd23d417",
+    "sha12": "1cd7cc63d94d"
+  }
+]

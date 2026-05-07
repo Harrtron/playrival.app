@@ -1,7 +1,7 @@
 (() => {
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const nav = document.querySelector(".site-nav");
-  const hero = document.querySelector(".hero");
+  const hero = document.querySelector(".hero") || document.querySelector(".elite-hero");
   const revealEls = Array.from(document.querySelectorAll("[data-reveal]"));
 
   const syncNav = () => {
