@@ -1592,6 +1592,15 @@ a:hover {
   }
 }
 
+.elite-apply__seal {
+  display: block;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 0 0 1rem;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 0 12px rgba(234, 20, 139, 0.5));
+}
+
 .waitlist-kicker {
   display: inline-flex;
   align-items: center;
@@ -2844,6 +2853,14 @@ a:hover {
     inset 0 0 0 1px rgba(255, 255, 255, 0.02),
     0 16px 40px rgba(0, 0, 0, 0.3),
     0 0 32px rgba(0, 255, 136, 0.06);
+}
+
+.elite-founders__icon {
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  margin: 0 0 1.25rem;
+  image-rendering: pixelated;
 }
 
 .elite-founders__eyebrow {

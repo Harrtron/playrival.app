@@ -53,5 +53,70 @@
     "label": "hero-art-anim",
     "asset_id": "5bd1f7b8-3a26-467c-9478-ce5abd23d417",
     "sha12": "1cd7cc63d94d"
+  },
+  {
+    "label": "armband",
+    "asset_id": "bcb8e8e0-7fcd-4f94-8725-12b38cfe7f89",
+    "sha12": ""
+  },
+  {
+    "label": "armband-anim",
+    "asset_id": "3788b134-3391-4bc1-9c51-58aa91f21e46",
+    "sha12": ""
+  },
+  {
+    "label": "door",
+    "asset_id": "ef7467ae-b34d-4a8c-acbd-93337ead5ee1",
+    "sha12": ""
+  },
+  {
+    "label": "door-anim",
+    "asset_id": "4049ea97-baa4-4aa8-be04-d9d7bcb0665c",
+    "sha12": ""
+  },
+  {
+    "label": "controller",
+    "asset_id": "e46f2b8e-f0a5-48b0-ab81-d0597114cc78",
+    "sha12": ""
+  },
+  {
+    "label": "controller-anim",
+    "asset_id": "f21dc721-d501-409d-a2b0-1364e57da75d",
+    "sha12": ""
+  },
+  {
+    "label": "community-badge",
+    "asset_id": "e37c8002-9e9c-45f5-8dc7-94b00954f91a",
+    "sha12": ""
+  },
+  {
+    "label": "community-badge-anim",
+    "asset_id": "7943b34b-0bec-41a3-a592-3dea43a46859",
+    "sha12": ""
+  },
+  {
+    "label": "trophy",
+    "asset_id": "466dca9e-6a8c-4763-a6cf-7859a59f476d",
+    "sha12": ""
+  },
+  {
+    "label": "trophy-anim",
+    "asset_id": "75b3ee97-b26c-4ede-bf8d-863b4a3c520c",
+    "sha12": ""
+  },
+  {
+    "label": "crowd",
+    "asset_id": "5fc6a345-f319-4d32-bd34-12915c2a4ce3",
+    "sha12": ""
+  },
+  {
+    "label": "crowd-anim",
+    "asset_id": "bc3e50f9-23da-49bf-af7f-5be95134d031",
+    "sha12": ""
+  },
+  {
+    "label": "wax-seal",
+    "asset_id": "f301f8b5-1fdb-4700-a091-4650d5cd01fc",
+    "sha12": ""
   }
 ]
