@@ -1463,6 +1463,16 @@ a:hover {
   }
 }
 
+.progression__icon {
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  object-fit: contain;
+  image-rendering: pixelated;
+  margin: 0 0 1.25rem;
+  filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.35));
+}
+
 .progression__kicker {
   display: inline-flex;
   align-items: center;
@@ -2969,4 +2979,394 @@ a:hover {
 
 #elite-apply {
   scroll-margin-top: 5rem;
+}
+
+/* ── Homepage rewrite — new sections ───────────────────── */
+
+/* Section eyebrow label (kicker above heading) */
+.section__eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin: 0 0 0.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+/* Premise — short punchy statement */
+.premise {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.premise__inner {
+  max-width: 42rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.premise__p {
+  font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+  line-height: 1.75;
+  color: var(--muted);
+  margin: 0 0 0.85rem;
+}
+
+.premise__p:last-child {
+  margin: 0;
+}
+
+.premise__p strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* Platform rhythm — pre / live / post */
+.platform-rhythm {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .platform-rhythm {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.platform-phase {
+  background: var(--surface);
+  padding: 2rem 1.75rem;
+  border-bottom: 1px solid var(--border);
+  border-top: 3px solid transparent;
+}
+
+@media (min-width: 768px) {
+  .platform-phase {
+    border-bottom: none;
+    border-right: 1px solid var(--border);
+  }
+
+  .platform-phase:last-child {
+    border-right: none;
+  }
+}
+
+.platform-phase--pre  { border-top-color: var(--neon); }
+.platform-phase--live { border-top-color: var(--primary); }
+.platform-phase--post { border-top-color: var(--gold); }
+
+.platform-phase__icon {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  object-fit: contain;
+  image-rendering: pixelated;
+  margin: 0 0 1rem;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.3));
+}
+
+.platform-phase__time {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+}
+
+.platform-phase__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin: 0 0 0.75rem;
+}
+
+.platform-phase--pre  .platform-phase__title { color: var(--neon); }
+.platform-phase--live .platform-phase__title { color: var(--primary); }
+.platform-phase--post .platform-phase__title { color: var(--gold); }
+
+.platform-phase__body {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 1.25rem;
+}
+
+.game-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.game-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid;
+}
+
+.game-tag--pink {
+  color: var(--primary);
+  border-color: rgba(234, 20, 139, 0.4);
+  background: rgba(234, 20, 139, 0.08);
+}
+
+.game-tag--green {
+  color: var(--neon);
+  border-color: rgba(0, 255, 136, 0.35);
+  background: rgba(0, 255, 136, 0.07);
+}
+
+.game-tag--gold {
+  color: var(--gold);
+  border-color: rgba(255, 215, 0, 0.35);
+  background: rgba(255, 215, 0, 0.07);
+}
+
+/* Chaos cards tease */
+.chaos-tease {
+  background: linear-gradient(135deg, rgba(255, 90, 31, 0.07), rgba(234, 20, 139, 0.05));
+  border: 1px solid rgba(255, 90, 31, 0.22);
+  border-radius: var(--radius);
+  padding: 3rem 2rem;
+  max-width: 1120px;
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.chaos-tease__icon {
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  object-fit: contain;
+  image-rendering: pixelated;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 0 24px rgba(255, 90, 31, 0.4));
+}
+
+.chaos-tease__kicker {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin: 0 0 0.75rem;
+}
+
+.chaos-tease__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0 0 0.75rem;
+  line-height: 0.95;
+}
+
+.chaos-tease__lead {
+  max-width: 36rem;
+  margin: 0 auto 2rem;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.chaos-cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.chaos-card-pill {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  padding: 1rem 1.25rem;
+  background: var(--surface);
+  border: 1px solid rgba(255, 90, 31, 0.28);
+  border-radius: var(--radius);
+  text-align: left;
+  min-width: 150px;
+  max-width: 220px;
+}
+
+.chaos-card-pill__name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+.chaos-card-pill__desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.chaos-card-pill__rarity {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.chaos-card-pill__rarity--legendary {
+  color: var(--primary);
+}
+
+.chaos-tease__footnote {
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-style: italic;
+  margin: 0;
+}
+
+/* Club identity */
+.club-section {
+  padding: 5rem 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.club-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 50% 40% at 50% 50%, rgba(0, 255, 136, 0.05), transparent);
+  pointer-events: none;
+}
+
+.club-section__eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--neon);
+  margin: 0 0 1rem;
+  position: relative;
+}
+
+.club-section__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  line-height: 0.95;
+  margin: 0 0 1.5rem;
+  position: relative;
+}
+
+.club-section__title span {
+  color: var(--neon);
+}
+
+.club-section__fixture {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 2.5vw, 1.35rem);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary);
+  background: rgba(234, 20, 139, 0.1);
+  border: 1px solid rgba(234, 20, 139, 0.3);
+  border-radius: var(--radius);
+  padding: 0.6rem 1.5rem;
+  margin: 0 0 1.75rem;
+  box-shadow: var(--glow-pink);
+  position: relative;
+}
+
+.club-section__body {
+  max-width: 40rem;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  position: relative;
+}
+
+.club-section__body strong {
+  color: var(--text);
+}
+
+/* World Cup 2026 urgency */
+.wc-section {
+  padding: 4rem 1.5rem;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.wc-inner {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.05), rgba(234, 20, 139, 0.07));
+  border: 1px solid rgba(255, 215, 0, 0.28);
+  border-radius: var(--radius);
+  padding: 3.5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.wc-inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 55% 65% at 50% 50%, rgba(255, 215, 0, 0.05), transparent 70%);
+  pointer-events: none;
+}
+
+.wc-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 1rem;
+  position: relative;
+}
+
+.wc-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 0.95;
+  margin: 0 0 1.25rem;
+  text-shadow: 0 0 60px rgba(255, 215, 0, 0.25);
+  position: relative;
+}
+
+.wc-sub {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 36rem;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+  position: relative;
+}
+
+.wc-sub strong {
+  color: var(--text);
 }
