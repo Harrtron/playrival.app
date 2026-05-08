@@ -18,6 +18,17 @@
 }
 
 /* Subtle global motion (honours reduced-motion below) */
+@keyframes nav-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes bg-grid-drift {
   to {
     background-position: 48px 48px, 48px 48px;
@@ -1896,6 +1907,7 @@ a:hover {
 
 /* Scroll-state nav */
 .site-nav {
+  animation: nav-enter 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
   transition:
     background-color 0.24s ease,
     border-color 0.24s ease,
@@ -2094,6 +2106,12 @@ a:hover {
 
 /* Motion accessibility */
 @media (prefers-reduced-motion: reduce) {
+  .site-nav,
+  .back-link {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+
   .hero__badge,
   .hero__logo-stack,
   .hero h1,
@@ -2171,6 +2189,8 @@ a:hover {
   font-weight: 600;
   font-size: 0.9rem;
   color: var(--muted);
+  opacity: 0;
+  animation: hero-enter-up 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .back-link:hover {
@@ -2586,6 +2606,11 @@ a:hover {
   z-index: 1;
 }
 
+/* Eyebrow + back-link — precede the headline */
+.manifesto__eyebrow {
+  animation: m-fade-up 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
 /* Headline — line-by-line on page load */
 .manifesto__hl-line {
   display: block;
@@ -2663,11 +2688,13 @@ a:hover {
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
+  .manifesto__eyebrow,
   .manifesto__hl-line,
   .manifesto__orb,
   .manifesto__mission-pixel-img,
   .manifesto__callout,
   .manifesto__stat-num.count-done {
+    opacity: 1 !important;
     animation: none !important;
   }
 
@@ -2833,9 +2860,52 @@ a:hover {
   }
 }
 
+/* Elite hero entrance — mirrors homepage hero sequence */
+.elite-hero__eyebrow,
+.elite-hero h1,
+.elite-hero__sub,
+.elite-hero__ctas,
+.elite-hero-art {
+  opacity: 0;
+  animation-duration: 700ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation-fill-mode: forwards;
+}
+
+.elite-hero__eyebrow {
+  animation-name: hero-enter-up;
+  animation-delay: 0ms;
+}
+
+.elite-hero h1 {
+  animation-name: hero-enter-up;
+  animation-delay: 160ms;
+}
+
+.elite-hero__sub {
+  animation-name: hero-enter-up;
+  animation-delay: 300ms;
+}
+
+.elite-hero__ctas {
+  animation-name: hero-enter-up;
+  animation-delay: 420ms;
+}
+
+.elite-hero-art {
+  animation-name: hero-enter-scale;
+  animation-delay: 220ms;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .elite-hero__eyebrow,
+  .elite-hero h1,
+  .elite-hero__sub,
+  .elite-hero__ctas,
+  .elite-hero-art,
   .elite-hero-art img,
   .elite-benefits .card__icon {
+    opacity: 1 !important;
     animation: none !important;
   }
 }
