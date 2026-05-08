@@ -62,7 +62,36 @@
   }
 }
 
+@keyframes site-galaxy-mesh {
+  0%, 100% {
+    background-position: 50% -18%, 100% 48%, 0% 82%, 0 0;
+  }
+  50% {
+    background-position: 44% -12%, 88% 54%, 10% 72%, 0 0;
+  }
+}
+
+@keyframes brand-star-drift {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(-10deg) scale(1);
+  }
+  33% {
+    transform: translate3d(28px, -34px, 0) rotate(7deg) scale(1.08);
+  }
+  66% {
+    transform: translate3d(-22px, 24px, 0) rotate(14deg) scale(0.96);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-10deg) scale(1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .bg-grid,
+  .site-brand-stars img {
+    animation: none !important;
+  }
+
   .bg-grid::after,
   .hero__backdrop::before,
   .hero__backdrop::after,
@@ -88,6 +117,8 @@ body {
   line-height: 1.55;
   color: var(--text);
   background: var(--bg);
+  position: relative;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -113,10 +144,12 @@ a:hover {
   pointer-events: none;
   z-index: 0;
   background:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(234, 20, 139, 0.18), transparent),
-    radial-gradient(ellipse 60% 40% at 100% 50%, rgba(0, 255, 136, 0.06), transparent),
-    radial-gradient(ellipse 50% 30% at 0% 80%, rgba(255, 90, 31, 0.08), transparent),
+    radial-gradient(ellipse 80% 50% at 50% -18%, rgba(234, 20, 139, 0.18), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 48%, rgba(0, 255, 136, 0.06), transparent),
+    radial-gradient(ellipse 50% 30% at 0% 82%, rgba(255, 90, 31, 0.08), transparent),
     linear-gradient(180deg, var(--bg) 0%, #0d0e14 100%);
+  background-size: 130% 130%, 120% 120%, 120% 120%, 100% 100%;
+  animation: site-galaxy-mesh 22s ease-in-out infinite;
 }
 
 .bg-grid::after {
@@ -131,6 +164,32 @@ a:hover {
   opacity: 0.12;
   mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 70%);
   animation: bg-grid-drift 36s linear infinite;
+}
+
+.site-brand-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.site-brand-stars img {
+  position: absolute;
+  left: var(--star-x);
+  top: var(--star-y);
+  width: var(--star-size);
+  height: auto;
+  opacity: 0.16;
+  filter:
+    blur(0.15px)
+    drop-shadow(0 0 16px rgba(234, 20, 139, 0.55));
+  mix-blend-mode: screen;
+  animation: brand-star-drift var(--star-duration) ease-in-out infinite;
+  animation-delay: var(--star-delay);
 }
 
 .page-wrap {
@@ -184,14 +243,14 @@ a:hover {
 
 /* Hero */
 .hero {
-  min-height: 100vh;
-  min-height: 100dvh;
+  min-height: 72vh;
+  min-height: 72dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 5.5rem 1.25rem 3rem;
+  padding: 5rem 1.25rem 2rem;
   position: relative;
   overflow: hidden;
 }
@@ -300,6 +359,12 @@ a:hover {
 }
 
 @media (max-width: 540px) {
+  .hero {
+    min-height: 68vh;
+    min-height: 68dvh;
+    padding: 4.5rem 1.25rem 1.75rem;
+  }
+
   .hero__mockup {
     --hero-mockup-opacity: 0.38;
     right: max(-14vw, -1.5rem);
@@ -3369,4 +3434,756 @@ a:hover {
 
 .wc-sub strong {
   color: var(--text);
+}
+
+/* ── Galaxy ambient copy (3-line below the scene) ───────────────── */
+.galaxy-ambient-copy {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 1.5rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Waitlist small print ────────────────────────────────────────── */
+.waitlist-small {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin: 1rem 0 0;
+  opacity: 0.6;
+  letter-spacing: 0.04em;
+}
+
+/* ── RIVAL Galaxy ────────────────────────────────────────────────── */
+@keyframes galaxy-node-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+.rival-galaxy {
+  position: relative;
+  padding: 0 0 2rem;
+  overflow: hidden;
+}
+
+/* Ambient glow behind the scene */
+.galaxy-ambient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 35%, rgba(234, 20, 139, 0.07) 0%, transparent 65%),
+    radial-gradient(ellipse 45% 35% at 50% 65%, rgba(0, 255, 136, 0.04) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* The floating phone stage */
+.galaxy-scene {
+  position: relative;
+  height: clamp(360px, 44vw, 520px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* Each node is absolutely centred then offset via CSS props set by JS */
+.galaxy-node {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform:
+    translate(-50%, -50%)
+    translateX(var(--gx, 0px))
+    translateY(var(--gy, 0px))
+    scale(var(--gs, 1));
+  opacity: var(--go, 0);
+  z-index: var(--gz, 1);
+  transition:
+    transform 750ms cubic-bezier(0.2, 0.9, 0.2, 1),
+    opacity   600ms ease,
+    filter    600ms ease;
+  cursor: pointer;
+}
+
+.galaxy-node--active {
+  cursor: default;
+}
+
+/* Galaxy node image — the screenshot already has the phone frame baked in */
+.galaxy-node__img {
+  display: block;
+  width: clamp(160px, 22vw, 240px);
+  height: auto;
+  filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.55));
+}
+
+/* Gentle float for the active node image */
+.galaxy-node--active .galaxy-node__img {
+  animation: galaxy-node-float 7s ease-in-out infinite;
+}
+
+/* Node name label — revealed on hover or when active */
+.galaxy-node__label {
+  position: absolute;
+  bottom: -1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 220ms ease;
+  pointer-events: none;
+}
+
+.galaxy-node:hover .galaxy-node__label,
+.galaxy-node--active .galaxy-node__label {
+  opacity: 1;
+}
+
+/* Inactive node pulse — draws attention to clickable orbs */
+@keyframes node-glow-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.06),
+      0 20px 50px rgba(0, 0, 0, 0.55),
+      0 0 30px rgba(234, 20, 139, 0.07);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.1),
+      0 20px 50px rgba(0, 0, 0, 0.55),
+      0 0 44px rgba(234, 20, 139, 0.22);
+  }
+}
+
+.galaxy-node:not(.galaxy-node--active) .galaxy-node__img,
+.galaxy-node:not(.galaxy-node--active) .galaxy-icon-node {
+  animation: node-glow-pulse 3.5s ease-in-out infinite;
+}
+
+/* Chaos Cards icon node (no phone frame) */
+.galaxy-icon-node {
+  width: 155px;
+  height: 195px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(255, 90, 31, 0.1), rgba(234, 20, 139, 0.07));
+  border: 1px solid rgba(255, 90, 31, 0.24);
+  border-radius: 28px;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.45),
+    0 0 40px rgba(255, 90, 31, 0.07);
+}
+
+.galaxy-icon-node img {
+  width: 80px;
+  height: 80px;
+}
+
+/* Copy panels — positioned below the scene */
+.galaxy-copy {
+  position: relative;
+  min-height: 180px;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  z-index: 1;
+}
+
+.galaxy-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1rem 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 380ms ease, transform 380ms ease;
+  pointer-events: none;
+}
+
+.galaxy-content.is-active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.galaxy-content__eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--neon);
+  margin: 0 0 0.6rem;
+}
+
+.galaxy-content__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 0.95;
+  margin: 0 0 0.85rem;
+}
+
+.galaxy-content__body {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 38rem;
+}
+
+.galaxy-content__body strong {
+  color: var(--text);
+}
+
+/* Nav row */
+.galaxy-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.25rem 0 1rem;
+  position: relative;
+  z-index: 3;
+}
+
+.galaxy-btn {
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.18), transparent 42%),
+    rgba(234, 20, 139, 0.14);
+  border: 1px solid rgba(234, 20, 139, 0.4);
+  border-radius: 50%;
+  width: 3.3rem;
+  height: 3.3rem;
+  color: var(--text);
+  font-size: 1.35rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 200ms, color 200ms, border-color 200ms;
+  line-height: 1;
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.34),
+    0 0 30px rgba(234, 20, 139, 0.18);
+}
+
+.galaxy-btn:hover,
+.galaxy-btn:focus-visible {
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.24), transparent 42%),
+    rgba(234, 20, 139, 0.24);
+  color: var(--text);
+  border-color: rgba(234, 20, 139, 0.72);
+  outline: none;
+  transform: translateY(-1px) scale(1.04);
+}
+
+.galaxy-dots {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.galaxy-dots--inside {
+  margin-top: 1.2rem;
+}
+
+.galaxy-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 250ms, transform 250ms;
+}
+
+.galaxy-dot.is-active {
+  background: var(--primary);
+  transform: scale(1.5);
+}
+
+.galaxy-dot:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+/* Mobile: only show active node */
+@media (max-width: 767px) {
+  .galaxy-scene {
+    height: clamp(300px, 65vw, 400px);
+  }
+
+  .galaxy-node {
+    opacity: 0 !important;
+    pointer-events: none;
+    transition: opacity 400ms ease;
+  }
+
+  .galaxy-node--active {
+    opacity: 1 !important;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) translateX(0) translateY(0) scale(1) !important;
+    filter: none !important;
+  }
+
+  .rival-galaxy .galaxy-node__img {
+    width: clamp(140px, 55vw, 200px);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .galaxy-node {
+    transition: opacity 200ms ease;
+  }
+
+  .galaxy-content {
+    transition: opacity 200ms ease;
+    transform: none !important;
+  }
+
+  .galaxy-node--active .galaxy-node__img {
+    animation: none;
+  }
+}
+
+/* ── Phase marker (Before/During the Match dividers) ─────────────── */
+.phase-marker {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1120px;
+  margin: 4rem auto 0;
+  padding: 0 1.5rem;
+}
+
+.phase-marker::before,
+.phase-marker::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.phase-marker__label {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* ── Feature block (Pitch Clash / Timeline two-column deep dives) ─── */
+.feature-block {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .feature-block {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .feature-block--flip .feature-block__media {
+    order: 2;
+  }
+
+  .feature-block--flip .feature-block__copy {
+    order: 1;
+  }
+}
+
+.feature-block__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-block__media img {
+  width: min(240px, 60vw);
+  height: auto;
+  filter: drop-shadow(0 0 32px rgba(0, 255, 136, 0.15));
+}
+
+.feature-block--live .feature-block__media img {
+  filter: drop-shadow(0 0 32px rgba(234, 20, 139, 0.2));
+}
+
+.feature-block__eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--neon);
+  margin: 0 0 0.75rem;
+}
+
+.feature-block--live .feature-block__eyebrow {
+  color: var(--primary);
+}
+
+.feature-block__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 0.95;
+  margin: 0 0 1rem;
+}
+
+.feature-block__body {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 38rem;
+}
+
+.feature-block__body strong {
+  color: var(--text);
+}
+
+/* ── Product statement (Every fixture is a game world) ───────────── */
+.product-statement {
+  text-align: center;
+  padding: 3rem 1.5rem 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.product-statement__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 0.95;
+  margin: 0;
+}
+
+.product-statement__lead {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Insight bridge (no heading punchy paragraph) ────────────────── */
+.insight-bridge {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.insight-bridge strong {
+  color: var(--text);
+}
+
+/* ── Footer tagline ──────────────────────────────────────────────── */
+.site-footer__tagline {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0.25rem 0 0;
+}
+
+/* ── Immersive fixture galaxy overrides ──────────────────────────── */
+@keyframes galaxy-drift {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0) rotate(0.8deg);
+  }
+}
+
+@keyframes galaxy-ring-shimmer {
+  0%, 100% {
+    opacity: 0.28;
+    transform: translate(-50%, -50%) rotateX(66deg) rotateZ(-10deg) scale(1);
+  }
+  50% {
+    opacity: 0.46;
+    transform: translate(-50%, -50%) rotateX(66deg) rotateZ(-7deg) scale(1.02);
+  }
+}
+
+@keyframes galaxy-core-pulse {
+  0%, 100% {
+    opacity: 0.72;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+}
+
+.rival-galaxy {
+  padding: 0 0 3rem;
+  margin-top: -6.25rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.galaxy-ambient {
+  background:
+    radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.12) 0 1px, transparent 2px),
+    radial-gradient(circle at 72% 22%, rgba(255, 255, 255, 0.12) 0 1px, transparent 2px),
+    radial-gradient(circle at 84% 66%, rgba(255, 255, 255, 0.1) 0 1px, transparent 2px),
+    radial-gradient(circle at 38% 78%, rgba(255, 255, 255, 0.08) 0 1px, transparent 2px),
+    radial-gradient(ellipse 75% 50% at 50% 42%, rgba(234, 20, 139, 0.14), transparent 68%),
+    radial-gradient(ellipse 60% 42% at 50% 55%, rgba(0, 255, 136, 0.08), transparent 70%);
+  opacity: 0.9;
+}
+
+.galaxy-scene {
+  height: clamp(420px, 50vw, 620px);
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.galaxy-scene::before,
+.galaxy-scene::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.galaxy-scene::before {
+  width: min(92vw, 920px);
+  height: min(46vw, 360px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    inset 0 0 40px rgba(234, 20, 139, 0.08),
+    0 0 60px rgba(0, 255, 136, 0.05);
+  animation: galaxy-ring-shimmer 8s ease-in-out infinite;
+}
+
+.galaxy-scene::after {
+  width: min(76vw, 760px);
+  height: min(34vw, 270px);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%) rotateX(66deg) rotateZ(15deg);
+  opacity: 0.25;
+}
+
+.galaxy-core {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  width: min(58vw, 480px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.16) 0%, rgba(234, 20, 139, 0.18) 18%, rgba(0, 255, 136, 0.08) 40%, transparent 68%);
+  filter: blur(8px);
+  transform: translate(-50%, -50%);
+  animation: galaxy-core-pulse 7s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.galaxy-node {
+  transform:
+    translate(-50%, -50%)
+    translate3d(var(--gx, 0px), var(--gy, 0px), 0)
+    rotate(var(--grotate, 0deg))
+    scale(var(--gs, 1));
+  opacity: var(--go, 0);
+  filter: blur(var(--gblur, 0px));
+  transition:
+    transform 900ms cubic-bezier(0.18, 0.95, 0.2, 1),
+    opacity   720ms ease,
+    filter    720ms ease;
+  will-change: transform, opacity, filter;
+}
+
+.galaxy-node--active {
+  cursor: default;
+}
+
+.galaxy-node__img {
+  width: clamp(264px, 33.6vw, 408px);
+  filter:
+    drop-shadow(0 36px 80px rgba(0, 0, 0, 0.68))
+    drop-shadow(0 0 34px rgba(234, 20, 139, 0.18));
+  transform-origin: center center;
+}
+
+.galaxy-node--active .galaxy-node__img {
+  animation: galaxy-drift 7s ease-in-out infinite;
+  filter:
+    drop-shadow(0 46px 100px rgba(0, 0, 0, 0.72))
+    drop-shadow(0 0 60px rgba(234, 20, 139, 0.24))
+    drop-shadow(0 0 36px rgba(0, 255, 136, 0.08));
+}
+
+.galaxy-node:not(.galaxy-node--active) .galaxy-node__img,
+.galaxy-node:not(.galaxy-node--active) .galaxy-icon-node {
+  animation: none;
+}
+
+.galaxy-icon-node {
+  width: clamp(135px, 15vw, 190px);
+  height: clamp(170px, 19vw, 240px);
+  backdrop-filter: blur(14px);
+}
+
+.galaxy-node__label {
+  display: none;
+}
+
+.galaxy-copy-card {
+  position: relative;
+  z-index: 2;
+  width: min(92vw, 720px);
+  margin: -7rem auto 0;
+  padding: 1.55rem 1.65rem 1.65rem;
+  text-align: center;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05)),
+    rgba(10, 11, 15, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 24px;
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.5),
+    0 0 46px rgba(234, 20, 139, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.025);
+  backdrop-filter: blur(18px);
+}
+
+.galaxy-copy-card__eyebrow {
+  margin: 0 0 0.55rem;
+  color: var(--neon);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.galaxy-copy-card__title {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 3.6vw, 2.3rem);
+  letter-spacing: 0.04em;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.galaxy-copy-card__tease {
+  max-width: 34rem;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.galaxy-ambient-copy {
+  margin: 1rem 0 0;
+}
+
+.galaxy-nav {
+  padding-top: 1.1rem;
+}
+
+@media (min-width: 900px) {
+  .galaxy-nav {
+    position: absolute;
+    left: 50%;
+    top: clamp(250px, 30vw, 390px);
+    width: min(92vw, 980px);
+    transform: translate(-50%, -50%);
+    justify-content: space-between;
+    pointer-events: none;
+  }
+
+  .galaxy-btn,
+  .galaxy-dots {
+    pointer-events: auto;
+  }
+
+  .galaxy-dots {
+    position: static;
+    transform: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .rival-galaxy {
+    margin-top: -3rem;
+  }
+
+  .galaxy-scene {
+    height: clamp(360px, 82vw, 480px);
+  }
+
+  .galaxy-scene::before {
+    width: 150vw;
+    height: 48vw;
+  }
+
+  .galaxy-scene::after {
+    width: 118vw;
+    height: 36vw;
+  }
+
+  .galaxy-node {
+    opacity: var(--go, 0) !important;
+    pointer-events: auto;
+    transform:
+      translate(-50%, -50%)
+      translate3d(var(--gx, 0px), var(--gy, 0px), 0)
+      rotate(var(--grotate, 0deg))
+      scale(var(--gs, 1)) !important;
+  }
+
+  .rival-galaxy .galaxy-node__img {
+    width: clamp(204px, 74vw, 312px);
+  }
+
+  .galaxy-copy-card {
+    margin-top: -4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .galaxy-scene::before,
+  .galaxy-core,
+  .galaxy-node--active .galaxy-node__img {
+    animation: none !important;
+  }
 }
