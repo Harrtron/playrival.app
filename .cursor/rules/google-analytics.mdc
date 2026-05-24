@@ -1,0 +1,52 @@
+---
+description: Google Analytics and cookie consent on all public HTML pages
+globs: "**/*.html"
+alwaysApply: false
+---
+
+# Google Analytics (playrival.app)
+
+Every **public-facing HTML page** on playrival.app must include Google Analytics with **Consent Mode v2** and the shared cookie-consent script. Measurement ID: `G-R445NE2NSX`.
+
+## Required on each page
+
+1. **Google tag in `<head>`** — first content inside `<head>`, before `<meta charset>`. Do not add more than one Google tag per page.
+
+```html
+<!-- Google tag (gtag.js) — Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R445NE2NSX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("consent", "default", {
+    analytics_storage: "denied",
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+    wait_for_update: 500,
+  });
+  gtag("js", new Date());
+  gtag("config", "G-R445NE2NSX");
+</script>
+```
+
+2. **Cookie consent script before `</body>`** — use the same cache version as other local JS (see cache-busting rule):
+
+- Root pages (`index.html`, `privacy.html`, `terms.html`): `js/analytics.js?v=<N>`
+- Nested pages (`download/`, `support/`, etc.): `../js/analytics.js?v=<N>`
+
+```html
+<script defer src="js/analytics.js?v=36"></script>
+```
+
+## When adding or editing pages
+
+- **New HTML page** → add both snippets above; link `css/main.css` with the current `?v=` (nested pages use `../css/`).
+- **Copy from an existing page** in the same folder depth so paths stay correct.
+- **Do not** load GA on non-site files (e.g. templates, drafts) if they are not deployed pages.
+- **Privacy policy** — if analytics behavior or cookies change, update `privacy.html` (section `#cookies`) and bump its effective date.
+
+## Do not
+
+- Remove Consent Mode defaults or load analytics without `js/analytics.js`.
+- Put the measurement ID in a secret env file — it is public by design; keep logic in `js/analytics.js`, not duplicated inline beyond the gtag block.
