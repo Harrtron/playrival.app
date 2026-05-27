@@ -161,7 +161,7 @@
 
     if (yourRank === 1) {
       const cushion = Math.max(leader.score - players[1].score, 0);
-      footerEl.textContent = `You're Match MVP right now. Hold the ${formatScore(cushion)}-pt gap.`;
+      footerEl.textContent = `You've got the Crown. Hold the ${formatScore(cushion)}-pt gap.`;
       return;
     }
 

@@ -3464,7 +3464,7 @@ a:hover {
   color: var(--neon);
 }
 
-.club-section__fixture {
+.club-section__match {
   display: inline-block;
   font-family: var(--font-display);
   font-size: clamp(0.95rem, 2.5vw, 1.35rem);
@@ -3986,7 +3986,7 @@ a:hover {
   color: var(--text);
 }
 
-/* ── Product statement (Every fixture is a game world) ───────────── */
+/* ── Product statement (Every match is a game world) ───────────── */
 .product-statement {
   text-align: center;
   padding: 3rem 1.5rem 0;
@@ -4035,7 +4035,7 @@ a:hover {
   margin: 0.25rem 0 0;
 }
 
-/* ── Immersive fixture galaxy overrides ──────────────────────────── */
+/* ── Immersive match galaxy overrides ──────────────────────────── */
 @keyframes galaxy-drift {
   0%, 100% {
     transform: translate3d(0, 0, 0) rotate(0deg);

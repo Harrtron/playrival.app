@@ -154,14 +154,14 @@ Community identity terms: The RIVAL community. The RIVAL Elite. Season 1. The lo
 
 ---
 
-## 09 Match MVP
+## 09 Crowns
 
-On the pitch, there's a player of the match. In your lobby, it's you.
+On the pitch, there's a player of the match. In your lobby, you take the Crown.
 
-Match MVP is the pinnacle moment in RIVAL — the identity stamp that comes from winning a lobby. It is permanent, specific, and undeniable. Not a badge in a collection. A record on a match.
+Crowns are the pinnacle moment in RIVAL — the identity stamp that comes from winning a match. Each Crown is permanent, specific, and undeniable. Not a badge in a collection. A record on a match.
 
-**The line:** Match MVP — sealed with the score, the date, the moment. You own that match forever.
+**The line:** The Crown — sealed with the score, the date, the moment. You own that match forever.
 
-Use "put a name on it" as the frame for MVP copy. The win is personal. The record is public. The ownership is forever.
+Use "put a name on it" as the frame for Crown copy. The win is personal. The record is public. The ownership is forever.
 
-Match MVP sits alongside Rival Leagues (earn RP, climb divisions, get promoted) and Ref Rating (a rolling score of how sharp your calls really are) as the three pillars of progression in RIVAL. Together they answer: who won tonight, who's climbing the season, and how good are you really.
+Crowns sit alongside Rival Leagues (earn RP, climb divisions, get promoted) and Ref Rating (a rolling score of how sharp your calls really are) as the three pillars of progression in RIVAL. Together they answer: who won tonight, who's climbing the season, and how good are you really.
