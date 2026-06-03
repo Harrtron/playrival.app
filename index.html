@@ -30,7 +30,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css" />
-    <link rel="stylesheet" href="css/main.css?v=37" />
+    <link rel="stylesheet" href="css/main.css?v=38" />
     <link rel="icon" href="images/rival_icon_nobg.png" type="image/png" />
     <!-- Open Graph / social share -->
     <meta property="og:type" content="website" />
@@ -78,7 +78,8 @@
           <div class="hero__backdrop" aria-hidden="true"></div>
           <div class="hero__mockup" aria-hidden="true">
             <img
-              src="images/app_screenshots/RIVAL_Homepage.PNG"
+              class="hero__mockup-img hero__mockup-img--portrait"
+              src="images/app_screenshots/home.png"
               alt=""
               width="1080"
               height="1920"
@@ -99,126 +100,107 @@
 
         <!-- ─── 2. PRODUCT STATEMENT ──────────────────────────── -->
         <div class="product-statement" data-reveal="up">
-          <h2 class="product-statement__title">Every match<br />is a game world.</h2>
+          <h2 class="product-statement__title">Every match<br />is an arena.</h2>
         </div>
 
         <!-- ─── 3. RIVAL GALAXY ────────────────────────────────── -->
         <section
           class="rival-galaxy"
           data-rival-galaxy
-          aria-label="RIVAL match world — explore each game"
+          aria-label="RIVAL arena — explore each part of the match"
         >
           <div class="galaxy-ambient" aria-hidden="true"></div>
 
           <div class="galaxy-scene">
             <div class="galaxy-core" aria-hidden="true"></div>
 
-            <!-- Node 0: Match World -->
+            <!-- Node 0: Arena -->
             <div
               class="galaxy-node"
               data-galaxy-node="0"
-              data-galaxy-label="Match World"
-              data-galaxy-title="Your club's next match is the game."
+              data-galaxy-label="Arena"
+              data-galaxy-title="Step into the arena."
               data-galaxy-tease="Don't just read up on your club's next game, play it. You're a player, not a spectator."
-              aria-label="Match World"
+              aria-label="Arena"
               tabindex="0"
             >
-              <img class="galaxy-node__img" src="images/app_screenshots/RIVAL_Homepage.PNG" alt="RIVAL match world" width="1080" height="1920" decoding="async" loading="lazy" />
-              <span class="galaxy-node__label" aria-hidden="true">The Match World</span>
+              <img class="galaxy-node__img galaxy-node__img--portrait" src="images/app_screenshots/home.png" alt="RIVAL home" width="1080" height="1920" decoding="async" loading="lazy" />
+              <span class="galaxy-node__label" aria-hidden="true">The Arena</span>
             </div>
 
-            <!-- Node 1: Pitch Clash -->
+            <!-- Node 1: Timeline -->
             <div
               class="galaxy-node"
               data-galaxy-node="1"
-              data-galaxy-label="Pitch Clash"
-              data-galaxy-title="Out-think your rival before kickoff."
-              data-galaxy-tease="A tactical card game where real players, form, position, and stats decide who takes the crown."
-              aria-label="Pitch Clash"
-              tabindex="-1"
-            >
-              <img class="galaxy-node__img" src="images/app_screenshots/PitchClash_Gameplay.PNG" alt="Pitch Clash" width="1080" height="1920" decoding="async" loading="lazy" />
-              <span class="galaxy-node__label" aria-hidden="true">Pitch Clash</span>
-            </div>
-
-            <!-- Node 2: Timeline -->
-            <div
-              class="galaxy-node"
-              data-galaxy-node="2"
               data-galaxy-label="The Timeline"
-              data-galaxy-title="You remember more than you think."
-              data-galaxy-tease="Rebuild the last head-to-head from memory: the goals, the yellows, the moments only proper fans remember."
+              data-galaxy-title="Prove your head-to-head knowledge."
+              data-galaxy-tease="Pre-match focus: rebuild past meetings from memory — the goals, the cards, the moments only proper fans remember."
               aria-label="The Timeline"
               tabindex="-1"
             >
-              <img class="galaxy-node__img" src="images/app_screenshots/Timeline_Gameplay.PNG" alt="The Timeline" width="1080" height="1920" decoding="async" loading="lazy" />
+              <img class="galaxy-node__img" src="images/app_screenshots/Timeline_Gameplay.PNG" alt="The Timeline" width="2160" height="2160" decoding="async" loading="lazy" />
               <span class="galaxy-node__label" aria-hidden="true">The Timeline</span>
             </div>
 
-            <!-- Node 3: Title Charge -->
+            <!-- Node 2: Takes -->
+            <div
+              class="galaxy-node"
+              data-galaxy-node="2"
+              data-galaxy-label="Takes"
+              data-galaxy-title="Make your takes on the match."
+              data-galaxy-tease="Call the game before kickoff — play it safe or go edgy and win big when you're right."
+              aria-label="Takes"
+              tabindex="-1"
+            >
+              <img class="galaxy-node__img galaxy-node__img--portrait" src="images/app_screenshots/takes_make.png" alt="Make your takes" width="1080" height="1920" decoding="async" loading="lazy" />
+              <span class="galaxy-node__label" aria-hidden="true">Takes</span>
+            </div>
+
+            <!-- Node 3: Represent Your Club -->
             <div
               class="galaxy-node"
               data-galaxy-node="3"
-              data-galaxy-label="Title Charge"
-              data-galaxy-title="The match becomes playable live."
-              data-galaxy-tease="Join a lobby of fans watching the same game, call the moments as they happen, and race to take the title."
-              aria-label="Title Charge"
+              data-galaxy-label="Represent Your Club"
+              data-galaxy-title="Represent your club."
+              data-galaxy-tease="Represent your club and compete with your fanbase to help lift the title."
+              aria-label="Represent Your Club"
               tabindex="-1"
             >
-              <img class="galaxy-node__img" src="images/app_screenshots/TitleCharge_Gameplay.png" alt="Title Charge" width="2160" height="2160" decoding="async" loading="lazy" />
-              <span class="galaxy-node__label" aria-hidden="true">Title Charge</span>
+              <img class="galaxy-node__img galaxy-node__img--portrait" src="images/app_screenshots/club_leaderboards.png" alt="Club standings" width="1080" height="1920" decoding="async" loading="lazy" />
+              <span class="galaxy-node__label" aria-hidden="true">Represent Your Club</span>
             </div>
 
-            <!-- Node 4: Chaos Cards -->
+            <!-- Node 4: Crown -->
             <div
               class="galaxy-node"
               data-galaxy-node="4"
-              data-galaxy-label="Chaos Cards"
-              data-galaxy-title="One card can change the game."
-              data-galaxy-tease="Drop a chaos card at the right moment and shift the match world in your favour."
-              aria-label="Chaos Cards"
-              tabindex="-1"
-            >
-              <div class="galaxy-icon-node">
-                <img src="images/icons/elite/lightning-lock-anim.webp" alt="" width="256" height="256" decoding="async" loading="lazy" />
-              </div>
-              <span class="galaxy-node__label" aria-hidden="true">Chaos Cards</span>
-            </div>
-
-            <!-- Node 5: Crown -->
-            <div
-              class="galaxy-node"
-              data-galaxy-node="5"
               data-galaxy-label="Crown"
-              data-galaxy-title="Represent. Get immortalised."
-              data-galaxy-tease="Play for your club, win the match, and take the Crown — the fan whose name lives on it."
+              data-galaxy-title="Claim the crown."
+              data-galaxy-tease="As you play, you'll climb the match leaderboard and claim the crown."
               aria-label="Crown"
               tabindex="-1"
             >
-              <img class="galaxy-node__img" src="images/app_screenshots/profile.png" alt="Crown" width="1080" height="1920" decoding="async" loading="lazy" />
+              <img class="galaxy-node__img galaxy-node__img--portrait" src="images/app_screenshots/podium_win.png" alt="Match leaderboard crown" width="1080" height="1920" decoding="async" loading="lazy" />
               <span class="galaxy-node__label" aria-hidden="true">Crown</span>
             </div>
 
           </div>
 
           <div class="galaxy-copy-card" aria-live="polite" data-reveal="up" data-reveal-delay="150">
-            <p class="galaxy-copy-card__eyebrow" data-galaxy-copy-eyebrow>Match World</p>
-            <h3 class="galaxy-copy-card__title" data-galaxy-copy-title>Your club's next match is the game.</h3>
+            <p class="galaxy-copy-card__eyebrow" data-galaxy-copy-eyebrow>Arena</p>
+            <h3 class="galaxy-copy-card__title" data-galaxy-copy-title>Step into the arena.</h3>
             <p class="galaxy-copy-card__tease" data-galaxy-copy-tease>Don't just read up on your club's next game, play it. You're a player, not a spectator.</p>
             <div class="galaxy-dots galaxy-dots--inside" role="tablist" aria-label="Game modes">
-              <button class="galaxy-dot is-active" data-galaxy-dot role="tab" aria-selected="true" aria-label="The Match World"></button>
-              <button class="galaxy-dot" data-galaxy-dot role="tab" aria-selected="false" aria-label="Pitch Clash"></button>
+              <button class="galaxy-dot is-active" data-galaxy-dot role="tab" aria-selected="true" aria-label="The Arena"></button>
               <button class="galaxy-dot" data-galaxy-dot role="tab" aria-selected="false" aria-label="The Timeline"></button>
-              <button class="galaxy-dot" data-galaxy-dot role="tab" aria-selected="false" aria-label="Title Charge"></button>
-              <button class="galaxy-dot" data-galaxy-dot role="tab" aria-selected="false" aria-label="Chaos Cards"></button>
+              <button class="galaxy-dot" data-galaxy-dot role="tab" aria-selected="false" aria-label="Takes"></button>
+              <button class="galaxy-dot" data-galaxy-dot role="tab" aria-selected="false" aria-label="Represent Your Club"></button>
               <button class="galaxy-dot" data-galaxy-dot role="tab" aria-selected="false" aria-label="Crown"></button>
             </div>
           </div>
 
-          <p class="galaxy-ambient-copy" data-reveal="up" data-reveal-delay="250">Before kickoff. During the match. Don't watch the game, play it.</p>
-
           <!-- Navigation -->
-          <nav class="galaxy-nav" aria-label="Match world navigation">
+          <nav class="galaxy-nav" aria-label="Arena navigation">
             <button class="galaxy-btn" data-galaxy-prev aria-label="Previous">&#8592;</button>
             <button class="galaxy-btn" data-galaxy-next aria-label="Next">&#8594;</button>
           </nav>
@@ -231,7 +213,7 @@
             <div class="waitlist-copy" data-reveal="up">
               <p class="waitlist-kicker">Early access</p>
               <h2 id="waitlist-title" class="waitlist-title">Don't be<br />last in.</h2>
-              <p class="waitlist-lead">The first lobby opens for World Cup 2026. Get early access and be ready when the match world goes live.</p>
+              <p class="waitlist-lead">The game begins at World Cup 2026. Get early access and be ready when the arena goes live.</p>
             </div>
 
             <div class="sib-form" style="text-align: center; background-color: transparent" data-reveal="up" data-reveal-delay="100">

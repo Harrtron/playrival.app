@@ -166,7 +166,7 @@
     }
 
     const gap = Math.max(leader.score - you.score, 0);
-    footerEl.textContent = `${formatScore(gap)} pts off the Title Charge. One swing changes everything.`;
+    footerEl.textContent = `${formatScore(gap)} pts off the lead. One swing changes everything.`;
   };
 
   let stepIndex = 0;

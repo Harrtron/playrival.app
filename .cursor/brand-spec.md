@@ -45,7 +45,7 @@ Identity statement for the RIVAL community. Not users. Not viewers. The fans who
 
 ### Onboarding / First match
 **This is your game now.**
-The moment of transformation. Used at the point someone enters their first lobby. Creates the shift from passive fan to active rival.
+The moment of transformation. Used when the game begins for them. Creates the shift from passive fan to active rival.
 
 ### In-app / Live moments
 **No dead time.**
@@ -75,7 +75,7 @@ This distinction must be maintained across all copy. RIVAL sits in a unique posi
 - **Direct** — Say the thing. No preamble. No filler. Every word earns its place or it's cut.
 - **Alive** — Present tense. Active voice. Copy should feel like it's happening now, not being described after the fact.
 - **Competitive** — Rivalry is the brand. Copy should carry the energy of someone who wants to win — but never at the expense of welcome.
-- **Collective** — "We" over "you" where possible. RIVAL is a movement. The lobby, the community, the season — all of it is shared.
+- **Collective** — "We" over "you" where possible. RIVAL is a movement. The game begins, the community, the season — all of it is shared.
 - **Confident** — No hedging. No "kind of" or "sort of". RIVAL knows what it is. The copy should too.
 - **Never corporate** — No "gamified experience". No "second screen engagement". No investor language in user-facing copy. Ever.
 
@@ -86,7 +86,7 @@ This distinction must be maintained across all copy. RIVAL sits in a unique posi
 ### Use
 - Rivals — not users or players
 - The RIVAL Elite — not early adopters
-- The lobby — not a game session
+- The game begins — not a game session
 - The match — not the game (that's RIVAL)
 - Chaos — owned, deliberate
 - Season — not period or phase
@@ -112,7 +112,7 @@ This distinction must be maintained across all copy. RIVAL sits in a unique posi
 ## 07 Channel Application
 
 ### Website — Hero
-**Step out of the stands.** — then one line: "RIVAL is the live multiplayer game played inside every match. Create chaos. Rival everyone in your lobby."
+**Step out of the stands.** — then one line: "RIVAL is the live multiplayer game played inside every match. Create chaos. Rival everyone when the game begins."
 CTA: **Join The RIVAL Elite.**
 
 ### App Store — Title & Subtitle
@@ -125,7 +125,7 @@ Open with the identity shift: Step out of the stands. Walk through the loop in o
 
 ### In-App — Live moments
 Short. Present tense. Active.
-- "The match is live. Your lobby is waiting."
+- "The match is live. The game begins."
 - "Round 3 is live."
 - "You're 2 correct from the title."
 - "Drop a card. Change everything."
@@ -135,10 +135,10 @@ Never passive, never explanatory during live play.
 Frame: "I play RIVAL during every match — come watch and play with me." The product is the content. The watchalong is the activation. RIVAL should feel like something they discovered, not something they're promoting. Key line for influencers: **The game the match creates.**
 
 ### Social / Organic
-Community-first. Highlight moments from lobbies — chaos landing, last-second wins, leaderboard drama. Caption register: direct, short, competitive. Always end on rivalry: **Rival everyone.**
+Community-first. Highlight moments when the game begins — last-second wins, leaderboard drama. Caption register: direct, short, competitive. Always end on rivalry: **Rival everyone.**
 
 ### Pre-Match Content
-Build anticipation around the lobby, not just the match. "The match kicks off in 30. Your lobby is waiting." Pre-match is where RIVAL earns the habit — make it feel like part of the match ritual.
+Build anticipation around the game beginning, not just the match. "The match kicks off in 30. The game begins." Pre-match is where RIVAL earns the habit — make it feel like part of the match ritual.
 
 ---
 
@@ -150,13 +150,13 @@ RIVAL is not an app people use. It's something people are part of. The language 
 
 Use this frame in all early-adopter and The RIVAL Elite communications. Season 1 players are pioneers, not beta testers.
 
-Community identity terms: The RIVAL community. The RIVAL Elite. Season 1. The lobby. Your rivals. The league. These are not feature names. They are identity markers that create belonging and signal to newcomers that there is something worth joining.
+Community identity terms: The RIVAL community. The RIVAL Elite. Season 1. The game begins. Your rivals. The league. These are not feature names. They are identity markers that create belonging and signal to newcomers that there is something worth joining.
 
 ---
 
 ## 09 Crowns
 
-On the pitch, there's a player of the match. In your lobby, you take the Crown.
+On the pitch, there's a player of the match. When the game begins, you take the Crown.
 
 Crowns are the pinnacle moment in RIVAL — the identity stamp that comes from winning a match. Each Crown is permanent, specific, and undeniable. Not a badge in a collection. A record on a match.
 

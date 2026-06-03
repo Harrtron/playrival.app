@@ -329,7 +329,7 @@ a:hover {
   left: auto;
   right: max(-8vw, -2rem);
   bottom: max(-6vh, -1.5rem);
-  width: min(46vw, 500px);
+  width: min(32vw, 300px);
   max-width: none;
   pointer-events: none;
   opacity: var(--hero-mockup-opacity);
@@ -349,12 +349,20 @@ a:hover {
   animation: mockup-drift-y 22s ease-in-out infinite;
 }
 
+/* Portrait mockups (1080×1920) — cap height so they match legacy square hero scale */
+.hero__mockup-img--portrait {
+  width: auto;
+  max-width: 100%;
+  height: min(52vh, 420px);
+  margin-left: auto;
+}
+
 @media (max-width: 900px) {
   .hero__mockup {
     --hero-mockup-opacity: 0.45;
     right: max(-10vw, -2rem);
     bottom: max(-4vh, -1rem);
-    width: min(54vw, 380px);
+    width: min(38vw, 260px);
     transform: translateX(3vw);
     transform-origin: 88% 88%;
     filter: blur(0.5px)
@@ -380,7 +388,7 @@ a:hover {
     --hero-mockup-opacity: 0.38;
     right: max(-14vw, -1.5rem);
     bottom: max(-3vh, -0.5rem);
-    width: min(64vw, 280px);
+    width: min(44vw, 220px);
     transform: translateX(4vw);
     transform-origin: 90% 88%;
     filter: blur(0.6px)
@@ -3986,7 +3994,7 @@ a:hover {
   color: var(--text);
 }
 
-/* ── Product statement (Every match is a game world) ───────────── */
+/* ── Product statement (Every match is an arena) ───────────── */
 .product-statement {
   text-align: center;
   padding: 3rem 1.5rem 0;
@@ -4157,10 +4165,18 @@ a:hover {
 
 .galaxy-node__img {
   width: clamp(264px, 33.6vw, 408px);
+  height: auto;
   filter:
     drop-shadow(0 36px 80px rgba(0, 0, 0, 0.68))
     drop-shadow(0 0 34px rgba(234, 20, 139, 0.18));
   transform-origin: center center;
+}
+
+/* 1080×1920 phone shots — match visual scale of square Timeline assets */
+.galaxy-node__img--portrait {
+  width: auto;
+  height: clamp(264px, 33.6vw, 408px);
+  max-width: clamp(148px, 19vw, 230px);
 }
 
 .galaxy-node--active .galaxy-node__img {
@@ -4292,6 +4308,12 @@ a:hover {
 
   .rival-galaxy .galaxy-node__img {
     width: clamp(204px, 74vw, 312px);
+  }
+
+  .rival-galaxy .galaxy-node__img--portrait {
+    width: auto;
+    height: clamp(204px, 74vw, 312px);
+    max-width: clamp(115px, 42vw, 176px);
   }
 
   .galaxy-copy-card {
