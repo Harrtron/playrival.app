@@ -165,9 +165,16 @@
           /iPad|iPhone|iPod/.test(ua) ||
           (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
         var isAndroid = /Android/.test(ua);
-        var isTikTok = /TikTok|musical_ly|Bytedance/i.test(ua);
+        var isTikTok =
+          /TikTok|musical_ly|Bytedance|Aweme|trill_/i.test(ua) ||
+          /tiktok\.com/i.test(document.referrer || "");
         var isInAppBrowser =
           isTikTok || /Instagram|FBAN|FBAV|FB_IAB|Snapchat|Line\//i.test(ua);
+        // Many iOS in-app browsers (including TikTok) omit "Safari" from the UA.
+        var isIOSInAppBrowser =
+          isIOS &&
+          (isInAppBrowser || (/AppleWebKit/i.test(ua) && !/Safari/i.test(ua)));
+        var escapeMode = isIOSInAppBrowser;
         var storeUrl = isIOS ? iosStore : isAndroid ? androidStore : "";
         var hasRedirected = false;
 
@@ -190,7 +197,7 @@
         }
 
         function redirectToStore() {
-          if (hasRedirected) return;
+          if (hasRedirected || escapeMode) return;
           hasRedirected = true;
           setStatus("Opening your app store. If nothing happens, tap your store below.");
           window.location.href = storeUrl;
@@ -222,18 +229,18 @@
         }
 
         function trackAndMaybeRedirect() {
+          if (escapeMode) {
+            showEscapeInstructions();
+            sendPageView();
+            return;
+          }
+
           if (isInAppBrowser && isAndroid) {
             // The intent URL escapes the webview into the Play Store app.
             var playBtn = document.querySelector(".download-store-btn--android");
             if (playBtn) playBtn.setAttribute("href", androidIntentUrl);
             storeUrl = androidIntentUrl;
             sendPageView(redirectToStore);
-          } else if (isInAppBrowser && isIOS) {
-            // TikTok's iOS webview blocks App Store handoffs outright
-            // ("action could not be completed"), so don't auto-redirect —
-            // guide the user out to Safari instead.
-            showEscapeInstructions();
-            sendPageView();
           } else if (storeUrl) {
             setStatus("Opening the right app store. If nothing happens, tap your store below.");
             sendPageView(redirectToStore);
@@ -244,12 +251,13 @@
 
         window.setTimeout(trackAndMaybeRedirect, 300);
         window.setTimeout(function () {
-          if (!hasRedirected) return;
-          if (isInAppBrowser) {
+          if (escapeMode || (isInAppBrowser && hasRedirected)) {
             showEscapeInstructions();
-          } else {
-            setStatus("Still here? Tap your store below to download RIVAL.");
+            return;
           }
+
+          if (!hasRedirected) return;
+          setStatus("Still here? Tap your store below to download RIVAL.");
         }, 2500);
       })();
     </script>
