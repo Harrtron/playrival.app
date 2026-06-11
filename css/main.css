@@ -629,6 +629,14 @@ a:hover {
   margin: 2rem 0;
 }
 
+.download-redirect-status {
+  padding: 0.85rem 1rem;
+  color: var(--text);
+  background: rgba(234, 20, 139, 0.12);
+  border: 1px solid rgba(234, 20, 139, 0.45);
+  border-radius: var(--radius);
+}
+
 .download-store-btn {
   display: flex;
   align-items: center;

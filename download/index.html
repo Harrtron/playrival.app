@@ -14,7 +14,7 @@
         wait_for_update: 500,
       });
       gtag("js", new Date());
-      gtag("config", "G-R445NE2NSX");
+      gtag("config", "G-R445NE2NSX", { send_page_view: false });
     </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,31 +24,13 @@
       content="Download RIVAL for iOS or Android. Step out of the stands and into every football match."
     />
     <link rel="canonical" href="https://playrival.app/download/" />
-    <script>
-      (function () {
-        var ua = navigator.userAgent || navigator.vendor || window.opera || "";
-        var iosStore = "https://apps.apple.com/gb/app/rival-live-football-games/id6762257250";
-        var androidStore =
-          "https://play.google.com/store/apps/details?id=com.playthefuture.rival&hl=en_GB";
-        var isIOS =
-          /iPad|iPhone|iPod/.test(ua) ||
-          (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-        var isAndroid = /Android/.test(ua);
-
-        if (isIOS) {
-          window.location.replace(iosStore);
-        } else if (isAndroid) {
-          window.location.replace(androidStore);
-        }
-      })();
-    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/main.css?v=42" />
+    <link rel="stylesheet" href="../css/main.css?v=43" />
     <link rel="icon" href="../images/rival_icon_nobg.png" type="image/png" />
     <!-- Open Graph / social share -->
     <meta property="og:type" content="website" />
@@ -91,6 +73,9 @@
         <p class="legal__meta">
           Step out of the stands. Choose your platform below — on iPhone, iPad, or Android we’ll send
           you straight to the store.
+        </p>
+        <p class="download-redirect-status" id="download-redirect-status" aria-live="polite">
+          Choose your store below. On mobile, we’ll try to open the right one automatically.
         </p>
 
         <div class="download-stores">
@@ -146,6 +131,72 @@
         <p class="site-footer__legal">© Play The Future Ltd</p>
       </footer>
     </div>
+    <script>
+      (function () {
+        var ua = navigator.userAgent || navigator.vendor || window.opera || "";
+        var iosStore = "https://apps.apple.com/gb/app/rival-live-football-games/id6762257250";
+        var androidStore =
+          "https://play.google.com/store/apps/details?id=com.playthefuture.rival&hl=en_GB";
+        var isIOS =
+          /iPad|iPhone|iPod/.test(ua) ||
+          (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+        var isAndroid = /Android/.test(ua);
+        var storeUrl = isIOS ? iosStore : isAndroid ? androidStore : "";
+        var hasRedirected = false;
+
+        function setStatus(message) {
+          var status = document.getElementById("download-redirect-status");
+          if (status) status.textContent = message;
+        }
+
+        function redirectToStore() {
+          if (hasRedirected) return;
+          hasRedirected = true;
+          setStatus("Opening your app store. If TikTok blocks it, tap your store below.");
+          window.location.href = storeUrl;
+        }
+
+        function sendPageView(callback) {
+          if (typeof gtag !== "function") {
+            if (callback) window.setTimeout(callback, 700);
+            return;
+          }
+
+          var eventParams = {
+            page_title: "Download RIVAL",
+            page_location: window.location.href,
+            page_path: window.location.pathname,
+            send_to: "G-R445NE2NSX",
+          };
+
+          if (callback) {
+            var fallbackTimer = window.setTimeout(callback, 900);
+            eventParams.event_callback = function () {
+              window.clearTimeout(fallbackTimer);
+              callback();
+            };
+            eventParams.event_timeout = 800;
+          }
+
+          gtag("event", "page_view", eventParams);
+        }
+
+        function trackAndMaybeRedirect() {
+          if (storeUrl) {
+            setStatus("Opening the right app store. If nothing happens, tap your store below.");
+            sendPageView(redirectToStore);
+          } else {
+            sendPageView();
+          }
+        }
+
+        window.setTimeout(trackAndMaybeRedirect, 300);
+        window.setTimeout(function () {
+          if (!hasRedirected) return;
+          setStatus("Still here? Tap your store below to download RIVAL.");
+        }, 2500);
+      })();
+    </script>
     <script defer src="../js/analytics.js?v=36"></script>
   </body>
 </html>
