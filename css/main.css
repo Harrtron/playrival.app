@@ -722,6 +722,83 @@ a:hover {
   text-transform: uppercase;
 }
 
+.tiktok-download-hero {
+  position: relative;
+  padding: 1.25rem;
+  margin: 0 0 1rem;
+  background:
+    radial-gradient(circle at 84% 0%, rgba(234, 20, 139, 0.28), transparent 42%),
+    rgba(234, 20, 139, 0.1);
+  border: 1px solid rgba(234, 20, 139, 0.48);
+  border-radius: 22px;
+  box-shadow: var(--glow-pink);
+}
+
+.tiktok-download-hero__arrow {
+  position: fixed;
+  top: 0.35rem;
+  right: 0.9rem;
+  z-index: 1200;
+  color: var(--neon);
+  font-family: var(--font-display);
+  font-size: clamp(3.4rem, 18vw, 5.5rem);
+  line-height: 0.8;
+  text-shadow:
+    0 0 12px rgba(0, 255, 136, 0.9),
+    0 0 34px rgba(234, 20, 139, 0.6);
+  pointer-events: none;
+}
+
+.tiktok-download-hero__eyebrow {
+  margin: 0 0 0.5rem;
+  color: var(--neon);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tiktok-download-hero .legal__meta {
+  margin-bottom: 0;
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.tiktok-download-hero strong,
+.tiktok-download-step strong {
+  color: var(--text);
+}
+
+.tiktok-download-steps {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1rem 0 2rem;
+}
+
+.tiktok-download-step {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  padding: 0.9rem 1rem;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.tiktok-download-step__number {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 1.65rem;
+  height: 1.65rem;
+  color: var(--bg);
+  font-weight: 800;
+  background: var(--neon);
+  border-radius: 999px;
+}
+
 /* Sections */
 .section {
   padding: 4rem 1.5rem;
