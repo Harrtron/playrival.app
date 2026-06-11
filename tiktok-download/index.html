@@ -174,24 +174,60 @@
     <script>
       (function () {
         var ua = navigator.userAgent || navigator.vendor || window.opera || "";
+        var iosStore = "https://apps.apple.com/gb/app/rival-live-football-games/id6762257250";
+        var androidStore =
+          "https://play.google.com/store/apps/details?id=com.playthefuture.rival&hl=en_GB";
         var androidIntentUrl =
           "intent://details?id=com.playthefuture.rival#Intent;scheme=market;package=com.android.vending;end";
+        var isIOS =
+          /iPad|iPhone|iPod/.test(ua) ||
+          (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
         var isAndroid = /Android/.test(ua);
-        var isTikTok =
+        var isTikTokTraffic =
           /TikTok|musical_ly|Bytedance|Aweme|trill_/i.test(ua) ||
           /tiktok\.com/i.test(document.referrer || "");
-        var isInAppBrowser =
-          isTikTok || /Instagram|FBAN|FBAV|FB_IAB|Snapchat|Line\//i.test(ua);
+        // Referrer can stay "tiktok.com" after Open in browser — only use UA to
+        // decide whether we're still inside an in-app webview.
+        var isInAppWebViewUA =
+          /TikTok|musical_ly|Bytedance|Aweme|trill_|Instagram|FBAN|FBAV|FB_IAB|Snapchat|Line\//i.test(
+            ua
+          );
+        var isIOSInAppWebView =
+          isIOS && !/Safari/i.test(ua) && /AppleWebKit/i.test(ua);
+        var isAndroidInAppWebView = isAndroid && isInAppWebViewUA;
+        var storeUrl = isIOS ? iosStore : isAndroid ? androidStore : "";
+        var hasRedirected = false;
 
-        function sendPageView() {
-          if (typeof gtag !== "function") return;
+        function redirectToStore() {
+          if (hasRedirected || !storeUrl || isIOSInAppWebView) return;
+          hasRedirected = true;
+          window.location.href =
+            isAndroidInAppWebView && isAndroid ? androidIntentUrl : storeUrl;
+        }
 
-          gtag("event", "page_view", {
+        function sendPageView(callback) {
+          if (typeof gtag !== "function") {
+            if (callback) window.setTimeout(callback, 700);
+            return;
+          }
+
+          var eventParams = {
             page_title: "TikTok Download RIVAL",
             page_location: window.location.href,
             page_path: window.location.pathname,
             send_to: "G-R445NE2NSX",
-          });
+          };
+
+          if (callback) {
+            var fallbackTimer = window.setTimeout(callback, 900);
+            eventParams.event_callback = function () {
+              window.clearTimeout(fallbackTimer);
+              callback();
+            };
+            eventParams.event_timeout = 800;
+          }
+
+          gtag("event", "page_view", eventParams);
         }
 
         function sendEvent(name, params, callback) {
@@ -217,7 +253,7 @@
         }
 
         function prepareAndroidIntent() {
-          if (!isAndroid) return;
+          if (!isAndroidInAppWebView) return;
           var playBtn = document.querySelector(".download-store-btn--android");
           if (playBtn) playBtn.setAttribute("href", androidIntentUrl);
         }
@@ -246,10 +282,10 @@
         window.setTimeout(function () {
           prepareAndroidIntent();
           trackStoreClicks();
-          sendPageView();
+          sendPageView(redirectToStore);
           sendEvent("tiktok_download_instructions_view", {
-            is_tiktok: isTikTok ? "true" : "false",
-            is_in_app_browser: isInAppBrowser ? "true" : "false",
+            is_tiktok: isTikTokTraffic ? "true" : "false",
+            is_in_app_browser: (isIOSInAppWebView || isAndroidInAppWebView) ? "true" : "false",
           });
         }, 300);
       })();
