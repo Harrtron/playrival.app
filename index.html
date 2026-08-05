@@ -18,10 +18,10 @@
     </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>RIVAL - Step out of the stands.</title>
+    <title>RIVAL - Football Data, Gamified</title>
     <meta
       name="description"
-      content="RIVAL is the home of gamified football - scores, stats, history, all played, not just watched. Coming soon."
+      content="Football history and predictions. Every match your club ever played, turned into a game. No ads, no odds, no bookmakers."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,35 +29,30 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css" />
-    <link rel="stylesheet" href="css/main.css?v=46" />
+    <link rel="stylesheet" href="css/main.css?v=50" />
     <link rel="icon" href="images/rival_icon_nobg.png" type="image/png" />
     <!-- Open Graph / social share -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://playrival.app/" />
-    <meta property="og:title" content="RIVAL - Step out of the stands." />
-    <meta property="og:description" content="RIVAL is the home of gamified football - scores, stats, history, all played, not just watched. Coming soon." />
+    <meta property="og:title" content="RIVAL - Football Data, Gamified" />
+    <meta
+      property="og:description"
+      content="Football history and predictions. Every match your club ever played, turned into a game. No ads, no odds, no bookmakers."
+    />
     <meta property="og:image" content="https://playrival.app/images/og-share.jpg" />
     <meta property="og:image:width" content="1920" />
     <meta property="og:image:height" content="1080" />
     <!-- Twitter / X card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="RIVAL - Step out of the stands." />
-    <meta name="twitter:description" content="RIVAL is the home of gamified football - scores, stats, history, all played, not just watched. Coming soon." />
+    <meta name="twitter:title" content="RIVAL - Football Data, Gamified" />
+    <meta
+      name="twitter:description"
+      content="Football history and predictions. Every match your club ever played, turned into a game. No ads, no odds, no bookmakers."
+    />
     <meta name="twitter:image" content="https://playrival.app/images/og-share.jpg" />
   </head>
   <body>
     <div class="bg-grid" aria-hidden="true"></div>
-    <div class="site-brand-stars" aria-hidden="true">
-      <img src="images/rival_icon_nobg.png" alt="" style="--star-x: 8%; --star-y: 16%; --star-size: 28px; --star-delay: 0s; --star-duration: 24s;" />
-      <img src="images/rival_icon_nobg.png" alt="" style="--star-x: 18%; --star-y: 54%; --star-size: 36px; --star-delay: -4s; --star-duration: 30s;" />
-      <img src="images/rival_icon_nobg.png" alt="" style="--star-x: 31%; --star-y: 82%; --star-size: 24px; --star-delay: -7s; --star-duration: 32s;" />
-      <img src="images/rival_icon_nobg.png" alt="" style="--star-x: 44%; --star-y: 28%; --star-size: 22px; --star-delay: -2s; --star-duration: 26s;" />
-      <img src="images/rival_icon_nobg.png" alt="" style="--star-x: 58%; --star-y: 72%; --star-size: 30px; --star-delay: -9s; --star-duration: 34s;" />
-      <img src="images/rival_icon_nobg.png" alt="" style="--star-x: 73%; --star-y: 18%; --star-size: 34px; --star-delay: -5s; --star-duration: 28s;" />
-      <img src="images/rival_icon_nobg.png" alt="" style="--star-x: 84%; --star-y: 48%; --star-size: 26px; --star-delay: -11s; --star-duration: 36s;" />
-      <img src="images/rival_icon_nobg.png" alt="" style="--star-x: 92%; --star-y: 86%; --star-size: 38px; --star-delay: -6s; --star-duration: 32s;" />
-    </div>
     <div class="page-wrap">
       <header class="site-nav">
         <a class="site-nav__logo" href="/" aria-label="RIVAL home">
@@ -72,17 +67,16 @@
       </header>
 
       <main>
-
         <!-- ─── 1. HERO ─────────────────────────────────────────── -->
         <section class="hero" aria-labelledby="hero-heading">
           <div class="hero__backdrop" aria-hidden="true"></div>
-          <div class="hero__mockup" aria-hidden="true">
+          <div class="hero__mockup hero__mockup--device" aria-hidden="true">
             <img
-              class="hero__mockup-img hero__mockup-img--portrait"
-              src="images/app_screenshots/home.png"
+              class="hero__mockup-img"
+              src="images/mockups/PlayTab.png"
               alt=""
-              width="1080"
-              height="1920"
+              width="2160"
+              height="2160"
               decoding="async"
               fetchpriority="low"
             />
@@ -90,255 +84,157 @@
           <div class="hero__inner">
             <div class="hero__glow" aria-hidden="true"></div>
             <div class="hero__glow hero__glow--green" aria-hidden="true"></div>
-            <h1 id="hero-heading">Step out of<br /><span>the stands.</span></h1>
-            <p class="hero__sub">The home of gamified football - scores, stats, history, all played, not just watched.</p>
+            <h1 id="hero-heading">Football Data,<br /><span>Gamified.</span></h1>
+            <p class="hero__sub">
+              Football history and predictions. Every match your club ever played, turned into a
+              game.
+            </p>
             <div class="hero__ctas">
-              <a class="btn-secondary" href="download/">GET THE APP →</a>
+              <a class="btn-secondary" href="/download/">GET THE APP →</a>
             </div>
           </div>
         </section>
 
-        <!-- ─── 2. PRODUCT STATEMENT ──────────────────────────── -->
+        <!-- ─── Campaign line over historic games ───────────────── -->
         <div class="product-statement" data-reveal="up">
-          <h2 class="product-statement__title">Every match<br />is an arena.</h2>
+          <h2 class="product-statement__title">Relive the moments<br />that made you a fan.</h2>
         </div>
 
-        <!-- ─── 3. RIVAL GALAXY ────────────────────────────────── -->
-        <section
-          class="rival-galaxy"
-          data-rival-galaxy
-          aria-label="RIVAL arena - explore each part of the match"
-        >
-          <div class="galaxy-ambient" aria-hidden="true"></div>
-
-          <div class="galaxy-scene">
-            <div class="galaxy-core" aria-hidden="true"></div>
-
-            <!-- Node 0: Arena -->
-            <div
-              class="galaxy-node"
-              data-galaxy-node="0"
-              data-galaxy-label="Arena"
-              data-galaxy-title="Step into the arena."
-              data-galaxy-tease="Don't just read up on your club's next game, play it. You're a player, not a spectator."
-              aria-label="Arena"
-              tabindex="0"
-            >
-              <img class="galaxy-node__img galaxy-node__img--portrait" src="images/app_screenshots/home.png" alt="RIVAL home" width="1080" height="1920" decoding="async" loading="lazy" />
-              <span class="galaxy-node__label" aria-hidden="true">The Arena</span>
-            </div>
-
-            <!-- Node 1: Rewind -->
-            <div
-              class="galaxy-node"
-              data-galaxy-node="1"
-              data-galaxy-label="Rewind"
-              data-galaxy-title="Prove you remember the game."
-              data-galaxy-tease="Rewind old meetings between the two sides and rebuild them from memory - the goals, the cards, the moments only proper fans remember."
-              aria-label="Rewind"
-              tabindex="-1"
-            >
-              <img class="galaxy-node__img galaxy-node__img--portrait" src="images/app_screenshots/timeline_scoring.png" alt="Rewind" width="1080" height="1920" decoding="async" loading="lazy" />
-              <span class="galaxy-node__label" aria-hidden="true">Rewind</span>
-            </div>
-
-            <!-- Node 2: Takes -->
-            <div
-              class="galaxy-node"
-              data-galaxy-node="2"
-              data-galaxy-label="Takes"
-              data-galaxy-title="Make your takes on the match."
-              data-galaxy-tease="Call the game before kickoff - play it safe or go edgy and win big when you're right."
-              aria-label="Takes"
-              tabindex="-1"
-            >
-              <img class="galaxy-node__img galaxy-node__img--portrait" src="images/app_screenshots/takes_make.png" alt="Make your takes" width="1080" height="1920" decoding="async" loading="lazy" />
-              <span class="galaxy-node__label" aria-hidden="true">Takes</span>
-            </div>
-
+        <!-- ─── 2. ON THIS DAY ───────────────────────────────────── -->
+        <section class="feature-block home-feature" aria-labelledby="otd-heading">
+          <div class="feature-block__media feature-block__media--device" data-reveal="up">
+            <img
+              src="images/mockups/OnThisDay_Home.png"
+              alt="On This Day on iPhone, with streak flames and today's historic match"
+              width="2160"
+              height="2160"
+              decoding="async"
+              loading="lazy"
+            />
           </div>
-
-          <div class="galaxy-copy-card" aria-live="polite" data-reveal="up" data-reveal-delay="150">
-            <p class="galaxy-copy-card__eyebrow" data-galaxy-copy-eyebrow>Arena</p>
-            <h3 class="galaxy-copy-card__title" data-galaxy-copy-title>Step into the arena.</h3>
-            <p class="galaxy-copy-card__tease" data-galaxy-copy-tease>Don't just read up on your club's next game, play it. You're a player, not a spectator.</p>
-            <div class="galaxy-dots galaxy-dots--inside" role="tablist" aria-label="Game modes">
-              <button class="galaxy-dot is-active" data-galaxy-dot role="tab" aria-selected="true" aria-label="The Arena"></button>
-              <button class="galaxy-dot" data-galaxy-dot role="tab" aria-selected="false" aria-label="Rewind"></button>
-              <button class="galaxy-dot" data-galaxy-dot role="tab" aria-selected="false" aria-label="Takes"></button>
-            </div>
+          <div class="feature-block__copy" data-reveal="up" data-reveal-delay="80">
+            <p class="feature-block__eyebrow">Every day</p>
+            <h2 id="otd-heading" class="feature-block__title">
+              One match a day. Miss it and the streak's gone.
+            </h2>
+            <p class="feature-block__body">
+              Every calendar day, your club played someone. We find that match and make you play
+              it. Get the score, name the eleven, remember who scored and when. Land a gold or
+              silver star and your streak stays alive.
+            </p>
           </div>
-
-          <!-- Navigation -->
-          <nav class="galaxy-nav" aria-label="Arena navigation">
-            <button class="galaxy-btn" data-galaxy-prev aria-label="Previous">&#8592;</button>
-            <button class="galaxy-btn" data-galaxy-next aria-label="Next">&#8594;</button>
-          </nav>
-
         </section>
 
-        <!-- ─── 4. EMAIL CAPTURE ───────────────────────────────── -->
-        <section id="waitlist" class="cta-bottom" aria-labelledby="waitlist-title">
-          <div class="waitlist-shell">
-            <div class="waitlist-copy" data-reveal="up">
-              <p class="waitlist-kicker">Early access</p>
-              <h2 id="waitlist-title" class="waitlist-title">Don't be<br />last in.</h2>
-              <p class="waitlist-lead">The game begins at World Cup 2026. Get early access and be ready when the arena goes live.</p>
-            </div>
+        <!-- ─── 3. REWIND ────────────────────────────────────────── -->
+        <section
+          class="feature-block feature-block--flip home-feature"
+          aria-labelledby="rewind-heading"
+        >
+          <div class="feature-block__media feature-block__media--device" data-reveal="up">
+            <img
+              src="images/mockups/Rewind_SpinnerSelection.png"
+              alt="Rewind on iPhone, spinning to pick a past meeting to play"
+              width="2160"
+              height="2160"
+              decoding="async"
+              loading="lazy"
+            />
+          </div>
+          <div class="feature-block__copy" data-reveal="up" data-reveal-delay="80">
+            <p class="feature-block__eyebrow">Before every fixture</p>
+            <h2 id="rewind-heading" class="feature-block__title">
+              Before the next one, prove you remember the last ten.
+            </h2>
+            <p class="feature-block__body">
+              Rovers away on Saturday. You've played them forty-one times. RIVAL spins you into
+              one of those meetings and asks how much of it you actually kept. Five stages, gold
+              and silver on every one. Play every meeting and you've mastered the matchup, until
+              the next time you meet.
+            </p>
+          </div>
+        </section>
 
-            <div class="sib-form" style="text-align: center; background-color: transparent" data-reveal="up" data-reveal-delay="100">
-              <div id="sib-form-container" class="sib-form-container">
-                <div
-                  id="error-message"
-                  class="sib-form-message-panel"
-                  style="
-                    font-size: 16px;
-                    text-align: left;
-                    font-family: Helvetica, sans-serif;
-                    color: #661d1d;
-                    background-color: #ffeded;
-                    border-radius: 3px;
-                    border-color: #ff4949;
-                    max-width: 540px;
-                  "
-                >
-                  <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-                    <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
-                      <path
-                        d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z"
-                      />
-                    </svg>
-                    <span class="sib-form-message-panel__inner-text">
-                      Your early access submission could not be saved. Please try again.
-                    </span>
-                  </div>
-                </div>
-                <div></div>
-                <div
-                  id="success-message"
-                  class="sib-form-message-panel"
-                  style="
-                    font-size: 16px;
-                    text-align: left;
-                    font-family: Helvetica, sans-serif;
-                    color: #085229;
-                    background-color: #e7faf0;
-                    border-radius: 3px;
-                    border-color: #13ce66;
-                    max-width: 540px;
-                  "
-                >
-                  <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-                    <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
-                      <path
-                        d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z"
-                      />
-                    </svg>
-                    <span class="sib-form-message-panel__inner-text">You're in. We'll be in touch when the beta opens.</span>
-                  </div>
-                </div>
-                <div></div>
-                <div
-                  id="sib-container"
-                  class="sib-container--large sib-container--vertical"
-                  style="
-                    text-align: center;
-                    background-color: #ffffff;
-                    max-width: 540px;
-                    border-radius: 3px;
-                    border-width: 1px;
-                    border-color: #c0ccd9;
-                    border-style: solid;
-                    direction: ltr;
-                  "
-                >
-                  <form
-                    id="sib-form"
-                    method="POST"
-                    action="https://50891cf3.sibforms.com/serve/MUIFAFNZafFhgcecvq5Zn0XbG0YqA7WpEXf3BBLaKVP-BxM9uJFyqB5Fc4VIuMFFdkxEPuL_B65ltfndsDglGyGxN_0RZlpuawY5uW98mWBujV_YiO0r1XZUKOOTi_6A-N1XqDwl8U2qbZFyPeDYsB-czj02eXjt1u6yR0PmbqEhrKrC8a1pZHP5pO6EOI08JXDykoTz7NcIfrsZmA=="
-                    data-type="subscription"
-                  >
-                    <div style="padding: 24px 0">
-                      <div class="sib-input sib-form-block">
-                        <div class="form__entry entry_block">
-                          <div class="form__label-row">
-                            <label
-                              class="entry__label"
-                              style="
-                                font-weight: 700;
-                                text-align: left;
-                                font-size: 16px;
-                                font-family: Helvetica, sans-serif;
-                                color: #fafafa;
-                              "
-                              for="EMAIL"
-                              data-required="*"
-                              >Email</label
-                            >
-                            <div class="entry__field">
-                              <input
-                                class="input"
-                                type="email"
-                                id="EMAIL"
-                                name="EMAIL"
-                                autocomplete="email"
-                                placeholder="Email address"
-                                data-required="true"
-                                required
-                              />
-                            </div>
-                          </div>
-                          <label
-                            class="entry__error entry__error--primary"
-                            style="
-                              font-size: 16px;
-                              text-align: left;
-                              font-family: Helvetica, sans-serif;
-                              color: #661d1d;
-                              background-color: #ffeded;
-                              border-radius: 3px;
-                              border-color: #ff4949;
-                            "
-                          >
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <div style="padding: 0 0 24px">
-                      <div class="sib-form-block" style="text-align: left">
-                        <button
-                          class="sib-form-block__button sib-form-block__button-with-loader"
-                          style="
-                            font-size: 16px;
-                            text-align: left;
-                            font-weight: 700;
-                            font-family: Helvetica, sans-serif;
-                            color: #000000;
-                            background-color: #f704da;
-                            border-radius: 3px;
-                            border-width: 0;
-                          "
-                          form="sib-form"
-                          type="submit"
-                        >
-                          <svg
-                            class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon"
-                            viewBox="0 0 512 512"
-                          >
-                            <path
-                              d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"
-                            />
-                          </svg>
-                          GET IN BEFORE YOUR RIVALS
-                        </button>
-                      </div>
-                    </div>
-                    <input type="text" name="email_address_check" value="" class="input--hidden" />
-                    <input type="hidden" name="locale" value="en" />
-                  </form>
-                </div>
-              </div>
-              <p class="waitlist-small">Season 1 · World Cup 2026</p>
+        <!-- ─── 4. THE GAP ───────────────────────────────────────── -->
+        <section class="home-prose" aria-labelledby="gap-heading" data-reveal="up">
+          <h2 id="gap-heading" class="home-prose__title">
+            Every other football app is paid for by bookmakers.
+          </h2>
+          <div class="home-prose__body">
+            <p>
+              That's why they all look the same, and why they're all pointed at what happens next.
+              There's no bet in a match from 1997, so nobody builds for it. The apps that do go
+              deep on history are web-first, clunky and funded by ads, most of them gambling ads.
+            </p>
+            <p>
+              We don't take bookmaker money. Fans pay for RIVAL, so fans are the only people we
+              answer to. No odds on screen. No gambling ads. Nothing in the product pushing you
+              toward a bet.
+            </p>
+          </div>
+        </section>
+
+        <!-- ─── 5. DEPTH ─────────────────────────────────────────── -->
+        <section class="home-prose home-prose--accent" aria-labelledby="depth-heading" data-reveal="up">
+          <h2 id="depth-heading" class="home-prose__title">Your club isn't filler here.</h2>
+          <div class="home-prose__body">
+            <p>
+              We go as deep on Shrewsbury Town as we do on Manchester United. Every club from
+              the Premier League to the EFL, back to 1990. Lineups, scorers, cards, the lot. The
+              stuff the big platforms hold and never bother to build anything with.
+            </p>
+          </div>
+        </section>
+
+        <!-- ─── 6. PREDICTIONS ───────────────────────────────────── -->
+        <section class="feature-block home-feature" aria-labelledby="predictions-heading">
+          <div class="feature-block__media feature-block__media--device" data-reveal="up">
+            <img
+              src="images/mockups/Takes_SelectionGrid.png"
+              alt="Takes on iPhone, picking your calls before kickoff"
+              width="2160"
+              height="2160"
+              decoding="async"
+              loading="lazy"
+            />
+          </div>
+          <div class="feature-block__copy" data-reveal="up" data-reveal-delay="80">
+            <p class="feature-block__eyebrow feature-block__eyebrow--pink">And the other half</p>
+            <h2 id="predictions-heading" class="feature-block__title">
+              When you're done with the past, call what's coming.
+            </h2>
+            <p class="feature-block__body">
+              Takes is one fixture: the score, the first scorer, and three calls you commit to
+              before kickoff. Watch the points tick up live. Season Predictor is the season-long
+              version, all 92 or one division at a time.
+            </p>
+            <p class="feature-block__body">
+              The harder the call, the more it's worth. You'll never see a price for it.
+            </p>
+          </div>
+        </section>
+
+        <!-- ─── 7. WHO WE ARE ────────────────────────────────────── -->
+        <section class="home-founders" aria-labelledby="founders-heading">
+          <div class="home-founders__copy" data-reveal="up">
+            <h2 id="founders-heading" class="home-founders__title">
+              Die hard EFL fans.
+            </h2>
+            <p>
+              We know exactly what it is to be an afterthought to the apps everyone uses. We got
+              tired of it and built the thing nobody was going to build for us.
+            </p>
+            <p>We're fans. We show up as fans, not suits.</p>
+          </div>
+        </section>
+
+        <!-- ─── 8. FINAL CTA ─────────────────────────────────────── -->
+        <section class="cta-bottom home-cta" aria-labelledby="final-cta-heading">
+          <div class="home-cta__inner" data-reveal="up">
+            <h2 id="final-cta-heading" class="waitlist-title">
+              Get the app.<br />Find out what you actually remember.
+            </h2>
+            <div class="hero__ctas">
+              <a class="btn-secondary" href="/download/">GET THE APP →</a>
             </div>
           </div>
         </section>
@@ -353,7 +249,7 @@
           height="53"
           decoding="async"
         />
-        <p class="site-footer__tagline">Step out of the stands.</p>
+        <p class="site-footer__tagline">Football Data, Gamified</p>
         <div class="site-footer__links">
           <a href="/manifesto/">Our Story</a>
           <span style="color: var(--border)" aria-hidden="true">·</span>
@@ -368,30 +264,7 @@
         <p class="site-footer__legal">© Play The Future Ltd</p>
       </footer>
     </div>
-    <script>
-      window.REQUIRED_CODE_ERROR_MESSAGE = "Please choose a country code";
-      window.LOCALE = "en";
-      window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE =
-        "The information provided is invalid. Please review the field format and try again.";
-      window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank. ";
-      window.GENERIC_INVALID_MESSAGE =
-        "The information provided is invalid. Please review the field format and try again.";
-
-      window.translation = {
-        common: {
-          selectedList: "{quantity} list selected",
-          selectedLists: "{quantity} lists selected",
-          selectedOption: "{quantity} selected",
-          selectedOptions: "{quantity} selected"
-        }
-      };
-
-      window.AUTOHIDE = Boolean(0);
-    </script>
-    <script defer src="js/characters.js?v=5"></script>
-    <script defer src="js/reveal.js?v=6"></script>
-    <script defer src="js/galaxy.js?v=3"></script>
-    <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
-    <script defer src="js/analytics.js?v=36"></script>
+    <script defer src="js/reveal.js?v=7"></script>
+    <script defer src="js/analytics.js?v=37"></script>
   </body>
 </html>
