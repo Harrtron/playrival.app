@@ -25,7 +25,7 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="css/main.css?v=62" />
+    <link rel="stylesheet" href="css/main.css?v=63" />
     <link rel="icon" href="images/rival_icon_nobg.png" type="image/png" />
     <!-- Open Graph / social share -->
     <meta property="og:type" content="website" />
@@ -55,11 +55,16 @@
           <img src="images/rival_logo_horizontal.png" alt="RIVAL" width="160" height="42" />
         </a>
         <nav class="site-nav__links" aria-label="Site">
-          <a href="/rival-app/">RIVAL App</a>
+          <a href="/rival-app/">Our App</a>
           <a href="/support/">Support</a>
-          <a href="/privacy.html">Privacy</a>
-          <a href="/terms.html">Terms</a>
-          <a href="/code-of-conduct/">Conduct</a>
+          <details class="site-nav__more">
+            <summary>More<span class="site-nav__more-caret" aria-hidden="true"></span></summary>
+            <div class="site-nav__more-menu">
+              <a href="/privacy.html">Privacy</a>
+              <a href="/terms.html">Terms</a>
+              <a href="/code-of-conduct/">Conduct</a>
+            </div>
+          </details>
         </nav>
       </header>
 
@@ -216,7 +221,7 @@
         />
         <p class="site-footer__tagline">Football Data, Gamified</p>
         <div class="site-footer__links">
-          <a href="/rival-app/">RIVAL App</a>
+          <a href="/rival-app/">Our App</a>
           <span style="color: var(--border)" aria-hidden="true">·</span>
           <a href="/manifesto/">Our Story</a>
           <span style="color: var(--border)" aria-hidden="true">·</span>
